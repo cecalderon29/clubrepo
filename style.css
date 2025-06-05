@@ -1,0 +1,144 @@
+body {
+    background-color: #fe8b8b;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 2rem;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #121213;
+  }
+  
+  .search-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 1rem;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter {
+    background: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .filter.active {
+    background: #411f1f;
+    color: white;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .club-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .club-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #1b2e35;
+  }
+  
+  .club-card p {
+    color: #3f4a4f;
+    margin: 0.5rem 0 0;
+  }
+  
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
+  .tag.art {
+    background: #ffe8d0;
+    color: #a05c00;
+  }
+  
+  .tag.tech {
+    background: #e0f1ff;
+    color: #005fa0;
+  }
+  
+  .tag.stem {
+    background: #d3f4e0;
+    color: #006f47;
+  }
+  .tag.theatre {
+    background: #f0d0ff;
+    color: #6f0050;
+  }
+  .tag.debate {
+    background: #ffe0d0;
+    color: #a00000;
+  }
+  .tag.writing {
+    background: #f8f9ea;
+    color: #958400;
+  }
+  .tag.games {
+    background: #b0feff;
+    color: #0a5342;
+  }
+  .tag.reading{
+    background: #f0f0f0;
+    color: #4a4a4a;
+  }
+  .tag.music {
+    background: #ffaed8;
+    color: #890241;
+  }
+
+  
