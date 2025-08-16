@@ -1,4 +1,38 @@
-body {
+:root {
+  /* Community Service */
+  --tag-background-community-service: oklch(90% 0.08 70.697); /* lighter */
+  --tag-color-community-service: oklch(20% 0.05 70.697); /* dark text */
+
+  /* Debate */
+  --tag-background-debate: oklch(92% 0.12 178.658);
+  --tag-color-debate: oklch(15% 0.05 178.658);
+
+  /* Arts */
+  --tag-background-arts: oklch(91% 0.12 343.231);
+  --tag-color-arts: oklch(18% 0.05 343.231);
+
+  /* Academic */
+  --tag-background-academic: oklch(90% 0.10 230.902);
+  --tag-color-academic: oklch(15% 0.05 230.902);
+
+  /* Games */
+  --tag-background-games: oklch(90% 0.10 274.713);
+  --tag-color-games: oklch(15% 0.05 274.713);
+
+  /* Leadership */
+  --tag-background-leadership: oklch(88% 0.08 58.071);
+  --tag-color-leadership: oklch(15% 0.05 58.071);
+
+  /* Social */
+  --tag-background-social: oklch(93.864% 0.05263 77.256);
+  --tag-color-social: oklch(18.406% 0.02817 91.697);
+
+  /* Music */
+  --tag-background-music: oklch(90% 0.10 210.123);
+  --tag-color-music: oklch(18% 0.05 210.123);
+}
+
+body{
   background-color: #ebebeb;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -122,43 +156,61 @@ h1 {
   font-weight: 600;
   margin-top: 0.5rem;
 }
-
-.tag.art {
-  background: #ffe8d0;
-  color: #a05c00;
+.tag-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.tag.tech {
-  background: #e0f1ff;
-  color: #005fa0;
+.description {
+  margin-bottom: 1.7rem;
+  color: #3f4a4f;
 }
 
-.tag.stem {
-  background: #d3f4e0;
-  color: #006f47;
+.club-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 0;
+  font-size: .8 rem;
+  color: #888888;
 }
-.tag.theatre {
-  background: #f0d0ff;
-  color: #6f0050;
+
+.tag.volunteer {
+  background: var(--tag-background-community-service);
+  color: var(--tag-color-community-service);
 }
+
 .tag.debate {
-  background: #ffe0d0;
-  color: #a00000;
-}
-.tag.writing {
-  background: #f8f9ea;
-  color: #958400;
-}
-.tag.games {
-  background: #b0feff;
-  color: #0a5342;
-}
-.tag.reading{
-  background: #f0f0f0;
-  color: #4a4a4a;
-}
-.tag.music {
-  background: #ffaed8;
-  color: #890241;
+  background: var(--tag-background-debate);
+  color: var(--tag-color-debate);
 }
 
+.tag.arts {
+  background: var(--tag-background-arts);
+  color: var(--tag-color-arts);
+}
+
+.tag.academic {
+  background: var(--tag-background-academic);
+  color: var(--tag-color-academic);
+}
+
+.tag.games {
+  background: var(--tag-background-games);
+  color: var(--tag-color-games);
+}
+
+.tag.leadership {
+  background: var(--tag-background-leadership);
+  color: var(--tag-color-leadership);
+}
+
+.tag.social {
+  background: var(--tag-background-social);
+  color: var(--tag-color-social);
+}
+
+.tag.music {
+  background: var(--tag-background-music);
+  color: var(--tag-color-music);
+}
