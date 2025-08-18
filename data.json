@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Art Club",
+    "location": "Room 75",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:20-4:30 PM",
+    "sponsors": ["C. Hodge"],
+    "description": "Explore various forms of visual arts.",
+    "tags": ["Arts", "Social"]
+  },
+  {
+    "name": "Chess Club",
+    "location": "Room 46",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:15-5:30 PM",
+    "sponsors": ["M. Steger"],
+    "description": "Competitive chess team practicing strategies.",
+    "tags": ["Games", "Academic"]
+  },
+  {
+    "name": "Debate Club",
+    "location": "Room 223",
+    "schedule": "Weekly",
+    "day": "Wednesday",
+    "time": "3:20-4:30 PM",
+    "sponsors": ["R. Smith"],
+    "description": "Practice formal debating skills and compete.",
+    "tags": ["Debate", "Leadership", "Academic"]
+  },
+  {
+    "name": "Community Service Club",
+    "location": "Room 31",
+    "schedule": "Every other week",
+    "day": "Tuesday",
+    "time": "7:10-7:35 AM",
+    "sponsors": ["M. Bice"],
+    "description": "Volunteer projects to give back to the community.",
+    "tags": ["Volunteer", "Leadership", "Social"]
+  }
+]

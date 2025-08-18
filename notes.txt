@@ -1,0 +1,197 @@
+root{
+  --tag-background-arts: oklch(89.9% 0.061 343.231);
+  --tag-color-arts: oklch(59.2% 0.249 0.584);
+  --tag-background-arts2: oklch(83.3% 0.145 321.434);
+  --tag-color-arts2: oklch(51.8% 0.253 323.949);
+  --tag-background-arts3: oklch(82.7% 0.119 306.383);
+  --tag-color-arts3: oklch(55.8% 0.288 302.321);
+  --tag-background-arts4: oklch(81.146% 0.14652 317.505);
+  --tag-color-arts4: oklch(40.9% 0.19731 319.049 / 0.678);
+
+  --tag-background-academic: oklch(90.1% 0.058 230.902);
+  --tag-color-academic: oklch(58.8% 0.158 241.966);
+
+  --tag-background-research: oklch(81.1% 0.111 293.571);
+  --tag-color-research: oklch(54.1% 0.281 293.009);
+
+  --tag-background-volunteer: oklch(90.1% 0.076 70.697);
+  --tag-color-volunteer: oklch(64.6% 0.222 41.116);
+
+  --tag-writing-background: oklch(90.1% 0.076 70.697);
+  --tag-writing-color: oklch(64.6% 0.222 41.116)9;
+
+  --tag-background-medical: oklch(80.8% 0.114 19.571);
+  --tag-color-medical: oklch(50.5% 0.213 27.518);
+   --tag-background-business: oklch(88% 0.1 45);
+  --tag-color-business: oklch(50% 0.2 50);
+
+  --tag-background-language: oklch(90% 0.08 120);
+  --tag-color-language: oklch(55% 0.2 130);
+
+  --tag-background-finance: oklch(80% 0.1 210);
+  --tag-color-finance: oklch(50% 0.15 220);
+
+  --tag-background-speech: oklch(92.176% 0.11709 178.658)9;
+  --tag-color-speech: oklch(60% 0.118 184.704);
+
+  --tag-honors-background: oklch(91% 0.096 180.426);
+  --tag-honors-color: oklch(60% 0.118 184.704);
+
+  --tag-background-culture: oklch(92.4% 0.12 95.746);
+  --tag-color-culture: oklch(76.9% 0.188 70.08);
+
+  --tag-background-media: oklch(94.5% 0.129 101.54);
+  --tag-color-media: oklch(79.5% 0.184 86.047);
+
+  --tag-background-music: oklch(90.2% 0.1 210.123);
+  --tag-color-music: oklch(60.1% 0.15 210.456);
+
+  --tag-background-gov: oklch(70.4% 0.04 256.788);
+  --tag-color-gov: oklch(27.9% 0.041 260.031);
+
+  --tag-background-leader: oklch(55.3% 0.013 58.071);
+  --tag-color-leader: oklch(30.2% 0.02 58.071);
+
+  --tag-background-outdoor: oklch(84.5% 0.143 164.978);
+  --tag-color-outdoor: oklch(50.8% 0.118 165.612);
+  --tag-background-outdoor2: oklch(93.8% 0.127 124.321);
+  --tag-color-outdoor2: oklch(64.8% 0.2 131.684);
+
+  --tag-background-sports: oklch(85.1% 0.12 210.123);
+  --tag-color-sports: oklch(50.2% 0.15 210.456);
+
+  --tag-background-games:oklch(78.5% 0.115 274.713);
+  --tag-color-games: oklch(51.1% 0.262 276.966);
+
+  --tag-background-stem: oklch(82.459% 0.10634 153.211);
+  --tag-color-stem: oklch(41.62% 0.11606 138.686);
+
+  --tag-background-technology: oklch(80% 0.1 210);
+  --tag-color-technology: oklch(50% 0.15 220);
+  
+}
+
+
+
+
+
+
+
+
+
+
+.tag.arts {
+  background: var(--tag-background-arts);
+  color: var(--tag-color-arts);
+}
+
+.tag.academic {
+  background: var(--tag-background-academic);
+  color: var(--tag-color-academic);
+}
+.tag.community-service {
+  background: var(--tag-background-volunteer);
+  color: var(--tag-color-volunteer);
+}
+
+.tag.culture {
+  background: var(--tag-background-culture);
+  color: var(--tag-color-culture);
+}
+.tag.dance {
+  background: var(--tag-background-arts2);
+  color: var(--tag-color-arts2);
+}
+.tag.debate {
+  background: var(--tag-background-speech);
+  color: var(--tag-color-speech);
+}
+.tag.environmental {
+  background: var(--tag-background-outdoor);
+  color: var(--tag-color-outdoor);
+}
+.tag.games {
+  background: var(--tag-background-games);
+  color: var(--tag-color-games);
+}
+.tag.government {
+  background: var(--tag-background-gov);
+  color: var(--tag-color-gov);
+}
+.tag.honor\ society {
+  background: var(--tag-honors-background);
+  color: var(--tag-honors-color);
+}
+.tag.leadership {
+  background: var(--tag-background-leader);
+  color: var(--tag-color-leader);
+}
+.tag.medical {
+  background: var(--tag-background-medical);
+  color: var(--tag-color-medical);
+}
+.tag.media {
+  background: var(--tag-background-media);
+  color: var(--tag-color-media);
+}
+.tag.music {
+  background: var(--tag-background-music);
+  color: var(--tag-color-music);
+}
+.tag.outdoor {
+  background: var(--tag-background-outdoor2);
+  color: var(--tag-color-outdoor2);
+}
+.tag.preforming\ arts {
+  background: var(--tag-background-arts3);
+  color: var(--tag-color-arts3);
+}
+.tag.research {
+    background:  var(--tag-background-research);
+    color: var(--tag-color-research);
+}
+.tag.recreation {
+  background: var(--tag-background-outdoor);
+  color: var(--tag-color-outdoor);
+}
+.tag.social {
+  background:  var(--tag-background-arts2);
+  color: var(--tag-color-arts2);
+}
+.tag.sports {
+  background: var(--tag-background-sports);
+  color: var(--tag-color-sports);
+}
+.tag.stem {
+    background: var(--tag-background-stem);
+    color: var(--tag-color-stem); 
+}
+.tag.theater {
+  background:  var(--tag-background-arts4);
+  color: var(--tag-color-arts4);
+}
+.tag.writing {
+  background:  var(--tag-writing-background);
+  color: var(--tag-writing-color);  
+}
+
+.tag.business {
+  background: var(--tag-background-business);
+  color: var(--tag-color-business);
+}
+
+.tag.language {
+  background: var(--tag-background-language);
+  color: var(--tag-color-language);
+}
+
+.tag.finance {
+  background: var(--tag-background-finance);
+  color: var(--tag-color-finance);
+}
+
+.tag.technology {
+  background: var(--tag-background-technology);
+  color: var(--tag-color-technology); 
+}
+ 
