@@ -1,7 +1,4 @@
 :root {
-<<<<<<< HEAD
-    --tag--blue--background: ;
-=======
   --tag-red-bg: oklch(93.6% 0.032 17.717);
   --tag-red-text: oklch(44.4% 0.177 26.899);
   --tag-orange-bg: oklch(95.4% 0.038 75.164);
@@ -38,7 +35,6 @@
   --tag-rose-text: oklch(50.2% 0.176 40.861);
   --tag-stone-bg: oklch(92.5% 0.009 261.318);
   --tag-stone-text: oklch(37.4% 0.01 67.558);
->>>>>>> filterdropdown
   
 }
 
@@ -158,7 +154,8 @@ h1 {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -212,8 +209,6 @@ h1 {
   color: #888888;
 }
 
-<<<<<<< HEAD
-=======
 .tag.volunteer {
   background: var(--tag-red-bg);
   color: var(--tag-red-text);
@@ -242,4 +237,3 @@ h1 {
   background: var(--tag-emerald-bg);
   color: var(--tag-emerald-text);
 }
->>>>>>> filterdropdown
