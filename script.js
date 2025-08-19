@@ -1,30 +1,34 @@
-
 document.addEventListener("DOMContentLoaded", async function () {
   const cardGrid = document.getElementById("clubCards");
   const searchInput = document.getElementById("searchInput");
   const tagMenu = document.getElementById("tagMenu");
-  const filterToggle = document.getElementById("filterToggle");
   let clubs = [];
   let selectedTag = "all";
+
+  // Load clubs
   await fetch("./data.json")
     .then(response => response.json())
     .then(data => {
       clubs = data;
-
       clubs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
-
-      // Render initial cards
       renderCards(clubs);
     });
 
+  // Load tags
+  async function loadTags() {
+    const res = await fetch("tags.json");
+    const clubTags = await res.json();
+    clubTags.sort((a, b) => a.name.localeCompare(b.name));
+    renderTagMenu(clubTags);
+  }
+
   function renderCards(clubsToRender) {
-    cardGrid.innerHTML = ""; // Clear existing cards
+    cardGrid.innerHTML = "";
 
     clubsToRender.forEach(club => {
       const card = document.createElement("div");
       card.classList.add("club-card");
 
-      // Convert tags into styled <span> elements
       const tagSpans = club.tags
         .map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`)
         .join(" ");
@@ -34,77 +38,64 @@ document.addEventListener("DOMContentLoaded", async function () {
         <div class="tag-card-row">${tagSpans}</div>
         <p class="description">${club.description}</p>
         <div class="club-footer">
-          <span class=time">${club.time} </span>
-          <span class="club-day">${club.day}</span>
+          <span class="club-time">${club.time || ""}</span>
+          <span class="club-day">${club.day || ""}</span>
         </div>
       `;
 
       cardGrid.appendChild(card);
     });
-
-    // Generate tag buttons
-    const tagButtons = clubsToRender.reduce((acc, club) => {
-      club.tags.forEach(tag => {
-        if (!acc.includes(tag)) {
-          acc.push(tag);
-        }
-      });
-      return acc;
-    }, []);
-
-    const tagSortHtml = tagButtons.map(tag => {
-      return `<button class="tag" data-tag="${tag}">${tag}</button>`;
-    }).join('');
-
-    document.querySelector('.tag-row').innerHTML = tagSortHtml;
   }
 
-// Event listener for tag buttons
-document.querySelectorAll('.tag').forEach(tag => {
-  tag.addEventListener('click', () => {
-    // Get the tag name from the button
-    const tagName = tag.textContent;
-    // Filter the clubs by the selected tag
-    const filteredClubs = clubs.filter(club => club.tags.includes(tagName));
-    // Render the filtered clubs
-    renderCards(filteredClubs);
-    // Add .active class to clicked tag
-    tag.classList.add('active');
-    // Remove .active class from other tags
-    document.querySelectorAll('.tag').forEach(otherTag => {
-      if (otherTag !== tag) {
-        otherTag.classList.remove('active');
-      }
+  function renderTagMenu(tags) {
+    tagMenu.innerHTML = "";
+
+    // "All" button
+    const allBtn = document.createElement("button");
+    allBtn.classList.add("tag-filter", "active");
+    allBtn.dataset.tag = "all";
+    allBtn.textContent = "All";
+    tagMenu.appendChild(allBtn);
+
+    // Tag buttons
+    tags.forEach(tag => {
+      const btn = document.createElement("button");
+      btn.classList.add("tag-filter");
+      btn.dataset.tag = tag.name.toLowerCase().replace(/\s+/g, '-');
+      btn.textContent = tag.name;
+      tagMenu.appendChild(btn);
     });
-    // Add color to the clicked tag
-    tag.style.borderColor = getTagColor(tagName);
-    tag.style.color = getTagColor(tagName);
-  });
-});
 
-// Function to get the color of a tag
-function getTagColor(tagName) {
-  const tagColors = {
-    'Community Service': 'var(--tag-color-community-service)',
-    'Debate': 'var(--tag-color-debate)',
-    'Arts': 'var(--tag-color-arts)',
-    'Academic': 'var(--tag-color-academic)',
-    'Games': 'var(--tag-color-games)',
-    'Leadership': 'var(--tag-color-leadership)',
-    'Social': 'var(--tag-color-social)',
-    'Music': 'var(--tag-color-music)',
-  };
-  return tagColors[tagName];
-}
+    // Add event listeners for tag filters
+    document.querySelectorAll(".tag-filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tag-filter").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedTag = btn.dataset.tag;
 
-// Event listener for clear all button
-document.querySelector('.clear-all').addEventListener('click', () => {
-  // Remove .active class from all tags
-  document.querySelectorAll('.tag').forEach(tag => {
-    tag.classList.remove('active');
+        const filtered = selectedTag === "all"
+          ? clubs
+          : clubs.filter(club => club.tags.some(t => t.toLowerCase().replace(/\s+/g, '-') === selectedTag));
+
+        renderCards(filtered);
+      });
+    });
+  }
+
+  // Search logic
+  searchInput.addEventListener("input", function () {
+    const query = searchInput.value.toLowerCase();
+    const filtered = clubs.filter(club =>
+      club.name.toLowerCase().split(" ").some(word => word.startsWith(query))
+    );
+
+    // Apply tag filter *on top of search*
+    const finalFiltered = selectedTag === "all"
+      ? filtered
+      : filtered.filter(club => club.tags.some(t => t.toLowerCase().replace(/\s+/g, '-') === selectedTag));
+
+    renderCards(finalFiltered);
   });
-  // Clear selected tags
-  selectedTag = 'all';
-  renderCards(clubs);
-});
+
+  loadTags();
 });

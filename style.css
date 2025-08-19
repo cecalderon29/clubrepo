@@ -1,35 +1,41 @@
 :root {
-  /* Community Service */
-  --tag-background-community-service: oklch(90% 0.08 70.697); /* lighter */
-  --tag-color-community-service: oklch(20% 0.05 70.697); /* dark text */
-
-  /* Debate */
-  --tag-background-debate: oklch(92% 0.12 178.658);
-  --tag-color-debate: oklch(15% 0.05 178.658);
-
-  /* Arts */
-  --tag-background-arts: oklch(91% 0.12 343.231);
-  --tag-color-arts: oklch(18% 0.05 343.231);
-
-  /* Academic */
-  --tag-background-academic: oklch(90% 0.10 230.902);
-  --tag-color-academic: oklch(15% 0.05 230.902);
-
-  /* Games */
-  --tag-background-games: oklch(90% 0.10 274.713);
-  --tag-color-games: oklch(15% 0.05 274.713);
-
-  /* Leadership */
-  --tag-background-leadership: oklch(88% 0.08 58.071);
-  --tag-color-leadership: oklch(15% 0.05 58.071);
-
-  /* Social */
-  --tag-background-social: oklch(93.864% 0.05263 77.256);
-  --tag-color-social: oklch(18.406% 0.02817 91.697);
-
-  /* Music */
-  --tag-background-music: oklch(90% 0.10 210.123);
-  --tag-color-music: oklch(18% 0.05 210.123);
+  --tag-red-bg: oklch(93.6% 0.032 17.717);
+  --tag-red-text: oklch(44.4% 0.177 26.899);
+  --tag-orange-bg: oklch(95.4% 0.038 75.164);
+  --tag-orange-text: oklch(55.3% 0.195 38.402);
+  --tag-amber-bg: oklch(96.2% 0.059 95.617);
+  --tag-amber-text: oklch(55.5% 0.163 48.998);
+  --tag-yellow-bg: oklch(97.3% 0.071 103.193);
+  --tag-yellow-text: oklch(55.4% 0.135 66.442);
+  --tag-lime-bg: oklch(96.7% 0.067 122.328);
+  --tag-lime-text: oklch(53.2% 0.157 131.589);
+  --tag-green-bg: oklch(96.2% 0.044 156.743);    
+  --tag-green-text: oklch(52.7% 0.154 150.069);
+  --tag-emerald-bg: oklch(95% 0.052 163.051);
+  --tag-emerald-text: oklch(50.8% 0.118 165.612);
+  --tag-teal-bg: oklch(95.3% 0.051 180.801);
+  --tag-teal-text: oklch(51.1% 0.096 186.391);
+  --tag-cyan-bg: oklch(95.6% 0.045 203.388);
+  --tag-cyan-text: oklch(52% 0.105 223.128);
+  --tag-sky-bg: oklch(95.1% 0.026 236.824);
+  --tag-sky-text: oklch(50% 0.134 242.749);
+  --tag-blue-bg: oklch(93.2% 0.032 255.585);
+  --tag-blue-text: oklch(48.8% 0.243 264.376);
+  --tag-indigo-bg: oklch(91.6% 0.03 282.659);
+  --tag-indigo-text: oklch(45.9% 0.176 286.911);
+  --tag-violet-bg: oklch(91.9% 0.03 306.583);
+  --tag-violet-text: oklch(45.6% 0.161 309.659);
+  --tag-purple-bg: oklch(92.9% 0.03 328.824);
+  --tag-purple-text: oklch(47.3% 0.176 331.602);
+  --tag-fuchsia-bg: oklch(93.8% 0.03 356.438);
+  --tag-fuchsia-text: oklch(48.6% 0.176 358.982);
+  --tag-pink-bg: oklch(94.6% 0.03 27.596);
+  --tag-pink-text: oklch(49.6% 0.176 29.718);
+  --tag-rose-bg: oklch(95.1% 0.03 39.322);
+  --tag-rose-text: oklch(50.2% 0.176 40.861);
+  --tag-stone-bg: oklch(92.5% 0.009 261.318);
+  --tag-stone-text: oklch(37.4% 0.01 67.558);
+  
 }
 
 body{
@@ -81,20 +87,7 @@ h1 {
   color: #666;
 }
 
-.filter-dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-.filter-btn {
-  padding: 8px 8px;
-  border-radius: 200px;
-  border: none;
-  background-color: #ebebeb;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
 .tag-sort {
   margin-top: 1rem;
   text-align: center;
@@ -104,53 +97,55 @@ h1 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-
 .tag-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
-  
+  margin-bottom: 0.5rem;
 }
 
-.tag-sort .tag {
-  background-color: transparent;
-  padding: 0.3rem 0.8rem;
-  border: 2px solid #ccc;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
+.description {
+  margin-bottom: 1.2rem;
+  color: #3f4a4f;
+}
+
+
+#tagMenu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+}
+
+
+.tag-filter {
+  background: #f3f4f6; 
+  border: 1px solid #d1d5db;
+  border-radius: 9999px; 
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
   cursor: pointer;
-  color: #666;
+  transition: all 0.2s ease-in-out;
 }
 
-.tag-sort .tag:hover {
-  background-color: #f7f7f7;
+
+.tag-filter:hover {
+  background: #e5e7eb;
+  border-color: #9ca3af;
 }
 
-.tag-sort .tag.active {
-  border-color: #007bff;
-  color: #007bff;
+#logo {
+  display: block;
+  margin: 1rem auto;
 }
 
-.clear-all {
-  background-color: transparent;
-  padding: 0.3rem 0.8rem;
-  border: 2px solid #ccc;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: #666;
-}
-
-.clear-all:hover {
-  background-color: #f7f7f7;
-}
-
-.clear-all.active {
-  border-color: #007bff;
-  color: #007bff;
+.tag-filter.active {
+  background: #2563eb; 
+  color: white;
+  border-color: #2563eb;
 }
 
 .hidden {
@@ -170,6 +165,9 @@ h1 {
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
+}
+.club-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
 }
 
 .club-card h2 {
@@ -211,41 +209,30 @@ h1 {
 }
 
 .tag.volunteer {
-  background: var(--tag-background-community-service);
-  color: var(--tag-color-community-service);
+  background: var(--tag-red-bg);
+  color: var(--tag-red-text);
 }
-
-.tag.debate {
-  background: var(--tag-background-debate);
-  color: var(--tag-color-debate);
-}
-
 .tag.arts {
-  background: var(--tag-background-arts);
-  color: var(--tag-color-arts);
+  background: var(--tag-orange-bg);
+  color: var(--tag-orange-text);
 }
-
 .tag.academic {
-  background: var(--tag-background-academic);
-  color: var(--tag-color-academic);
+  background: var(--tag-amber-bg);
+  color: var(--tag-amber-text);
 }
-
-.tag.games {
-  background: var(--tag-background-games);
-  color: var(--tag-color-games);
-}
-
-.tag.leadership {
-  background: var(--tag-background-leadership);
-  color: var(--tag-color-leadership);
-}
-
 .tag.social {
-  background: var(--tag-background-social);
-  color: var(--tag-color-social);
+  background: var(--tag-yellow-bg);
+  color: var(--tag-yellow-text);
 }
-
-.tag.music {
-  background: var(--tag-background-music);
-  color: var(--tag-color-music);
+.tag.games {
+  background: var(--tag-lime-bg);
+  color: var(--tag-lime-text);
+} 
+.tag.debate {
+  background: var(--tag-green-bg);
+  color: var(--tag-green-text);
+}
+.tag.leadership {
+  background: var(--tag-emerald-bg);
+  color: var(--tag-emerald-text);
 }
