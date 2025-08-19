@@ -2,56 +2,100 @@ document.addEventListener("DOMContentLoaded", async function () {
   const cardGrid = document.getElementById("clubCards");
   const searchInput = document.getElementById("searchInput");
   const tagMenu = document.getElementById("tagMenu");
-  const filterToggle = document.getElementById("filterToggle");
   let clubs = [];
   let selectedTag = "all";
-    await fetch("./data.json")
-        .then(response => response.json())
-        .then(data => {
-        clubs = data;
-  
-        clubs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
-        // Render initial cards
-        renderCards(clubs);
-        });
+  // Load clubs
+  await fetch("./data.json")
+    .then(response => response.json())
+    .then(data => {
+      clubs = data;
+      clubs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+      renderCards(clubs);
+    });
+
+  // Load tags
+  async function loadTags() {
+    const res = await fetch("tags.json");
+    const clubTags = await res.json();
+    clubTags.sort((a, b) => a.name.localeCompare(b.name));
+    renderTagMenu(clubTags);
+  }
+
   function renderCards(clubsToRender) {
-  cardGrid.innerHTML = ""; // Clear existing cards
+    cardGrid.innerHTML = "";
 
-  clubsToRender.forEach(club => {
-    const card = document.createElement("div");
-    card.classList.add("club-card");
+    clubsToRender.forEach(club => {
+      const card = document.createElement("div");
+      card.classList.add("club-card");
 
-    // Convert tags into styled <span> elements
-    const tagSpans = club.tags
-      .map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`)
-      .join(" ");
+      const tagSpans = club.tags
+        .map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`)
+        .join(" ");
 
-    card.innerHTML = `
-      <h2>${club.name}</h2>
-      <div class="tag-row">${tagSpans}</div>
-      <p class="description">${club.description}</p>
-      <div class="club-footer">
-        <span class=time">${club.time} </span>
-        <span class="club-day">${club.day}</span>
-      </div>
-    `;
+      card.innerHTML = `
+        <h2>${club.name}</h2>
+        <div class="tag-card-row">${tagSpans}</div>
+        <p class="description">${club.description}</p>
+        <div class="club-footer">
+          <span class="club-time">${club.time || ""}</span>
+          <span class="club-day">${club.day || ""}</span>
+        </div>
+      `;
 
-    cardGrid.appendChild(card);
-  });
-}
+      cardGrid.appendChild(card);
+    });
+  }
 
+  function renderTagMenu(tags) {
+    tagMenu.innerHTML = "";
+
+    // "All" button
+    const allBtn = document.createElement("button");
+    allBtn.classList.add("tag-filter", "active");
+    allBtn.dataset.tag = "all";
+    allBtn.textContent = "All";
+    tagMenu.appendChild(allBtn);
+
+    // Tag buttons
+    tags.forEach(tag => {
+      const btn = document.createElement("button");
+      btn.classList.add("tag-filter");
+      btn.dataset.tag = tag.name.toLowerCase().replace(/\s+/g, '-');
+      btn.textContent = tag.name;
+      tagMenu.appendChild(btn);
+    });
+
+    // Add event listeners for tag filters
+    document.querySelectorAll(".tag-filter").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tag-filter").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedTag = btn.dataset.tag;
+
+        const filtered = selectedTag === "all"
+          ? clubs
+          : clubs.filter(club => club.tags.some(t => t.toLowerCase().replace(/\s+/g, '-') === selectedTag));
+
+        renderCards(filtered);
+      });
+    });
+  }
 
   // Search logic
-    searchInput.addEventListener("input", function () {
+  searchInput.addEventListener("input", function () {
     const query = searchInput.value.toLowerCase();
     const filtered = clubs.filter(club =>
-        club.name.toLowerCase().split(" ").some(word => word.startsWith(query))
+      club.name.toLowerCase().split(" ").some(word => word.startsWith(query))
     );
-    renderCards(filtered);
+
+    // Apply tag filter *on top of search*
+    const finalFiltered = selectedTag === "all"
+      ? filtered
+      : filtered.filter(club => club.tags.some(t => t.toLowerCase().replace(/\s+/g, '-') === selectedTag));
+
+    renderCards(finalFiltered);
   });
 
-  // Toggle dropdown visibility
-
-  });
-
+  loadTags();
+});
