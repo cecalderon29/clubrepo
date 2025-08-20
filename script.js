@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
+  const toggleBtn = document.getElementById("toggleFilters");
   const cardGrid = document.getElementById("clubCards");
   const searchInput = document.getElementById("searchInput");
   const tagMenu = document.getElementById("tagMenu");
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       clubs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
       renderCards(clubs);
     });
-
+    
   // Load tags
   async function loadTags() {
     const res = await fetch("tags.json");
@@ -21,7 +22,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     clubTags.sort((a, b) => a.name.localeCompare(b.name));
     renderTagMenu(clubTags);
   }
+    toggleBtn.addEventListener("click", () => {
+    // Toggle "show" class
+    tagMenu.classList.toggle("show");
 
+    if (tagMenu.classList.contains("show")) {
+      toggleBtn.textContent = "Hide Filters ⬆";
+    } else {
+      toggleBtn.textContent = "Show Filters ⬇";
+    }
+  });
+  
   function renderCards(clubsToRender) {
     cardGrid.innerHTML = "";
 
@@ -45,8 +56,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       cardGrid.appendChild(card);
     });
-  }
 
+      updateClubCount(clubsToRender.length);
+  }
+  
+  function updateClubCount(count) {
+    const clubCountElement = document.getElementById("clubCount");
+    clubCountElement.textContent = `${count} clubs found`;
+  }
   function renderTagMenu(tags) {
     tagMenu.innerHTML = "";
 

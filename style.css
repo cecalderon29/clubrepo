@@ -37,25 +37,81 @@
   --tag-stone-text: oklch(37.4% 0.01 67.558);
   
 }
+/** * General Styles
+ */
 
-body{
-  background-color: #ebebeb;
+body {
+  background-color: #f7f6f6;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 2rem;
 }
-  
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  margin: 20px 0;
+}
 .container {
   max-width: 900px;
   margin: 0 auto;
 }
-
 h1 {
   text-align: center;
   font-size: 2.5rem;
   color: #121213;
-}
 
+}
+/*phone styles */
+@media (max-width: 768px) {
+  .header-section {
+    padding: 1rem;
+  }
+
+  #searchInput {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  #tagMenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  #logo {
+    width: 85px !important;
+    
+  }
+  .title {
+    font-size: 1.7rem;
+    margin: 0.5rem 0;
+  }
+  #tagMenu button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  #clubCards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .club-card {
+    padding: 0.75rem;
+  }
+  #tagMenu {
+    display: none!important;
+  }
+  #tagMenu.show {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+/* Search Filter Styles
+ */
 .search-filter {
   display: flex;
   flex-direction: column;
@@ -87,7 +143,16 @@ h1 {
   color: #666;
 }
 
-
+/* Tag Sort Styles
+ */
+ .filter-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
 .tag-sort {
   margin-top: 1rem;
   text-align: center;
@@ -103,12 +168,6 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-.description {
-  margin-bottom: 1.2rem;
-  color: #3f4a4f;
-}
-
-
 #tagMenu {
   display: flex;
   justify-content: center;
@@ -116,8 +175,8 @@ h1 {
   gap: 0.5rem;
   margin: 1rem 0 2rem 0;
   padding: 0;
+  max-width: 100%;
 }
-
 
 .tag-filter {
   background: #f3f4f6; 
@@ -130,16 +189,15 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
+.tag-filter-container {
+  max-width: 70%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 .tag-filter:hover {
   background: #e5e7eb;
   border-color: #9ca3af;
-}
-
-#logo {
-  display: block;
-  margin: 1rem auto;
 }
 
 .tag-filter.active {
@@ -147,14 +205,49 @@ h1 {
   color: white;
   border-color: #2563eb;
 }
-
-.hidden {
-  display: none;
+#toggleFilters {
+  margin: 10px auto;  
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #e0e0e0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+    
 }
 
+#toggleFilters:hover {
+  background: #d0d0d0;
+}
+
+.tag-menu {
+  margin-top: 10px;
+}
+.hidden {
+  display: none!important;
+}
+
+ /*logo styles */
+#logo {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Card Grid Styles
+ */
+
+ 
+#clubCount {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
@@ -181,20 +274,23 @@ h1 {
   color: #3f4a4f;
   margin: 0.5rem 0 0;
 }
-
-.tag {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-}
-.tag-card-row {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
+  /* Tag Styles
+  */
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  .tag-card-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
 
 .description {
   margin-bottom: 1.7rem;
@@ -209,11 +305,13 @@ h1 {
   color: #888888;
 }
 
+/* Tag Colors */
+
 .tag.volunteer {
   background: var(--tag-red-bg);
   color: var(--tag-red-text);
 }
-.tag.arts {
+.tag.art {
   background: var(--tag-orange-bg);
   color: var(--tag-orange-text);
 }

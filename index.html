@@ -2,26 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Club Directory</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="Redhawk.png" id="logo" alt="NCHS Redhawk Logo" width="150">
     <div class = "container">
-        <h1>NCHS Club Directory</h1>
-        <div class ="search-filter">
-            <div class="search-bar">
-                <input type="text" id ="searchInput" placeholder="Search clubs..."/>
-                <!--<span class="icon">🔍</span>-->
+        <div class = "header-section" >
+            <img src="Redhawk.png" id="logo" alt="NCHS Redhawk Logo" width="150">
+            <h1 class = "title">NCHS Club Directory</h1>
+            <div class ="search-filter">
+                <div class="search-bar">
+                    <input type="text" id ="searchInput" placeholder="Search clubs..."/>
+                </div>
             </div>
-              
+            <p class = "filter-label">Filter by Category:</p>
         </div>
-        <div id="tagMenu" class="tag-menu"></div>
-    </div>
-    <div id = "bottomcontainer">
-        <div class="card-grid" id="clubCards"></div>
-    </div>
+        <div class = "tag-filter-container">
+            <button id="toggleFilters">Toggle Tag Filter</button>
+            <div id="tagMenu" class="tag-menu"></div>
+        </div>
+        <hr class = "divider">
+        </div class = "club-section">
+            <p id = "clubCount"></p>
+            <div class="card-grid" id="clubCards"></div>
+        </div>
     
+    </div>
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>

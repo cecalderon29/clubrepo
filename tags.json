@@ -1,10 +1,21 @@
 [
   { "name": "Academic" },
-  { "name": "Arts" },
+  { "name": "Art" },
+  { "name": "Preforming Arts" },
   { "name": "Games" },
   { "name": "Leadership" },
   { "name": "Social" },
   { "name": "Debate" },
-  { "name": "Volunteer" }
-  
+  { "name": "Volunteer" },
+  { "name": "STEM" },
+  { "name": "Languages" },
+  { "name": "Medical"},
+  { "name": "Music" },
+  { "name": "Sports" },
+  { "name": "Writing" },
+  { "name": "Technology"},
+  { "name": "Business" },
+  { "name": "Environmental" },
+  { "name": "Recreational"},
+  { "name": "Dance"}
 ]
