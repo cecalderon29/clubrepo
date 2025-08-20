@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  const toggleBtn = document.getElementById("toggleFilters");
+  //const toggleBtn = document.getElementById("toggleFilters");
   const cardGrid = document.getElementById("clubCards");
   const searchInput = document.getElementById("searchInput");
   const tagMenu = document.getElementById("tagMenu");
@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     clubTags.sort((a, b) => a.name.localeCompare(b.name));
     renderTagMenu(clubTags);
   }
+
+  /*
     toggleBtn.addEventListener("click", () => {
     // Toggle "show" class
     tagMenu.classList.toggle("show");
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else {
       toggleBtn.textContent = "Show Filters ⬇";
     }
-  });
+  });*/
   
   function renderCards(clubsToRender) {
     cardGrid.innerHTML = "";

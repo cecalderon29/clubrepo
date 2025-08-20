@@ -101,14 +101,7 @@ h1 {
   .club-card {
     padding: 0.75rem;
   }
-  #tagMenu {
-    display: none!important;
-  }
-  #tagMenu.show {
-    display: flex; 
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  
 }
 /* Search Filter Styles
  */
@@ -145,6 +138,10 @@ h1 {
 
 /* Tag Sort Styles
  */
+ button {
+   display: block;
+   margin: auto;
+ }
  .filter-label {
   font-size: 14px;
   font-weight: 500;
@@ -189,11 +186,6 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.tag-filter-container {
-  max-width: 70%;
-  overflow-x: auto;
-  white-space: nowrap;
-}
 
 .tag-filter:hover {
   background: #e5e7eb;
@@ -205,28 +197,13 @@ h1 {
   color: white;
   border-color: #2563eb;
 }
-#toggleFilters {
-  margin: 10px auto;  
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  background: #e0e0e0;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s;
-    
-}
 
-#toggleFilters:hover {
-  background: #d0d0d0;
-}
+
 
 .tag-menu {
   margin-top: 10px;
 }
-.hidden {
-  display: none!important;
-}
+
 
  /*logo styles */
 #logo {

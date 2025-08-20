@@ -9,21 +9,21 @@
 </head>
 <body>
     <div class = "container">
-        <div class = "header-section" >
-            <img src="Redhawk.png" id="logo" alt="NCHS Redhawk Logo" width="150">
-            <h1 class = "title">NCHS Club Directory</h1>
-            <div class ="search-filter">
-                <div class="search-bar">
-                    <input type="text" id ="searchInput" placeholder="Search clubs..."/>
-                </div>
+        <img src="Redhawk.png" id="logo" alt="NCHS Redhawk Logo" width="150">
+        <h1>NCHS Club Directory</h1>
+        <div class ="search-filter">
+            <div class="search-bar">
+                <input type="text" id ="searchInput" placeholder="Search clubs..."/>
             </div>
-            <p class = "filter-label">Filter by Category:</p>
         </div>
-        <div class = "tag-filter-container">
-            <button id="toggleFilters">Toggle Tag Filter</button>
-            <div id="tagMenu" class="tag-menu"></div>
+
+        <p class = "filter-label">Filter by Category:</p>
+        <div class = "toggleFilters">
+            <button id="toggleFilters" >Toggle Tag Filter</button>
         </div>
+        <div id="tagMenu" class="tag-menu"></div>
         <hr class = "divider">
+
         </div class = "club-section">
             <p id = "clubCount"></p>
             <div class="card-grid" id="clubCards"></div>
