@@ -73,12 +73,7 @@ h1 {
     font-size: 1rem;
   }
 
-  #tagMenu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
+  
   #logo {
     width: 85px !important;
     
@@ -159,23 +154,37 @@ h1 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
-.tag-row {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 
+#toggleFilters {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#toggleFilters:hover {
+  background-color: #e9ecef;
+  border-color: #999;
+}
 #tagMenu {
-  display: flex;
-  justify-content: center;
+  display: none;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: center; 
+  gap: .5rem;
+  padding: 10px;
   margin: 1rem 0 2rem 0;
-  padding: 0;
   max-width: 100%;
 }
 
+
+#tagMenu.show {
+  display: flex !important;
+}
 .tag-filter {
+  flex: 0 0 auto; 
   background: #f3f4f6; 
   border: 1px solid #d1d5db;
   border-radius: 9999px; 
@@ -185,6 +194,7 @@ h1 {
   color: #374151;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  white-space: nowrap;
 }
 
 .tag-filter:hover {
