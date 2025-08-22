@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   const cardGrid = document.getElementById("clubCards");
   const searchInput = document.getElementById("searchInput");
   const tagMenu = document.getElementById("tagMenu");
+  const overlay = document.getElementById("clubOverlay");
+  const closeOverlay = document.getElementById("closeOverlay");
+
   let clubs = [];
   let selectedTag = "all";
 
@@ -55,13 +58,40 @@ document.addEventListener("DOMContentLoaded", async function () {
           <span class="club-day">${club.day || ""}</span>
         </div>
       `;
-
+      
+      // 👇 Overlay open on click
+      card.addEventListener("click", () => openOverlay(club));
+       
       cardGrid.appendChild(card);
     });
 
       updateClubCount(clubsToRender.length);
   }
   
+  // Overlay functionality
+  function openOverlay(club) {
+    console.log("openOverlay called with club:", club);
+    document.getElementById("overlayTitle").textContent = club.name;
+    document.getElementById("overlayTags").innerHTML = club.tags
+      .map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`)
+      .join(" ");
+    document.getElementById("overlayDescription").textContent = club.description;
+    //document.getElementById("overlayTime").textContent = club.time || "";
+    //document.getElementById("overlayDay").textContent = club.day || "";
+    
+    overlay.classList.remove("hide");
+  }
+
+  //Close overlay
+  document.getElementById("closeOverlay").addEventListener("click", () => {
+    overlay.classList.add("hide");
+  });
+  //also close overlay on clicking outside
+  document.getElementById("clubOverlay").addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.classList.add("hide");
+    }
+  });
   function updateClubCount(count) {
     const clubCountElement = document.getElementById("clubCount");
     clubCountElement.textContent = `${count} clubs found`;
