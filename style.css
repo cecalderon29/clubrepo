@@ -304,8 +304,21 @@ h1 {
   align-items: center;
   z-index: 1000;
 }
-
-
+.centered {
+  text-align: center;
+}
+.tag-centered {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+#overlayDetails {
+  margin-top: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 .overlay.hide {
   display: none!important;
 }

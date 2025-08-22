@@ -72,13 +72,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   function openOverlay(club) {
     console.log("openOverlay called with club:", club);
     document.getElementById("overlayTitle").textContent = club.name;
-    document.getElementById("overlayTags").innerHTML = club.tags
-      .map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`)
-      .join(" ");
-    document.getElementById("overlayDescription").textContent = club.description;
-    //document.getElementById("overlayTime").textContent = club.time || "";
-    //document.getElementById("overlayDay").textContent = club.day || "";
     
+    document.getElementById("overlayDescription").textContent = club.description;
+    document.getElementById("overlayTime").textContent = club.time || "Not specified";
+    document.getElementById("overlayDay").textContent = club.day || "Not specified";
+    document.getElementById("overlayRoom").textContent = club.room || "Not specified";
+
     overlay.classList.remove("hide");
   }
 
