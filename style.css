@@ -306,6 +306,7 @@ h1 {
 }
 .centered {
   text-align: center;
+  justify-content: center;
 }
 .tag-centered {
   display: flex;
