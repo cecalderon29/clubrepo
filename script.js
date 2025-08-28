@@ -73,6 +73,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("openOverlay called with club:", club);
     document.getElementById("overlayTitle").textContent = club.name;
     document.getElementById("tags").innerHTML = club.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join(" ");
+    const imgEl = document.getElementById("overlayImage");
+    if (club.image) {
+      imgEl.src = club.image;
+      imgEl.style.display = "block";
+    } else {
+      imgEl.style.display = "none";
+    }
     document.getElementById("overlayDescription").textContent = club.description;
     document.getElementById("overlayTime").textContent = club.time || "Not specified";
     document.getElementById("overlayDay").textContent = club.day || "Not specified";

@@ -304,6 +304,13 @@ h1 {
   align-items: center;
   z-index: 1000;
 }
+.overlay-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px 0;
+}
 .centered {
   text-align: center;
   justify-content: center;
