@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const tagMenu = document.getElementById("tagMenu");
   const overlay = document.getElementById("clubOverlay");
   const closeOverlay = document.getElementById("closeOverlay");
+  const imgEl = document.getElementById("overlayImage");
 
   let clubs = [];
   let selectedTag = "all";
@@ -73,9 +74,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log("openOverlay called with club:", club);
     document.getElementById("overlayTitle").textContent = club.name;
     document.getElementById("tags").innerHTML = club.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join(" ");
-    const imgEl = document.getElementById("overlayImage");
-    if (club.image) {
-      imgEl.src = club.image;
+    
+    if (club.images) {
+      imgEl.src = club.images;
       imgEl.style.display = "block";
     } else {
       imgEl.style.display = "none";
