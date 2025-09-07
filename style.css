@@ -304,6 +304,48 @@ h1 {
   align-items: center;
   z-index: 1000;
 }
+
+/* Gallery */
+.gallery 
+{ 
+  position: relative; 
+  width: 100%; margin: 
+  12px 0 18px;
+ }
+.gallery img { 
+  display: block; 
+  width: 100%; 
+  max-height: 420px; 
+  object-fit: cover; 
+  border-radius: 10px; 
+}
+
+/* Arrows ON the image */
+#prevBtn, #nextBtn {
+  position: absolute !important;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2; /* above the image */
+}
+#prevBtn:hover, #nextBtn:hover { background: rgba(0,0,0,.65); }
+#prevBtn { left: 12px; }
+#nextBtn { right: 12px; }
+
+/*  hide arrows when there’s only 1 image */
+.gallery .hide-nav { display: none !important; }
+
+
 .overlay-img {
   width: 100%;
   max-height: 250px;
@@ -390,4 +432,12 @@ h1 {
 .tag.leadership {
   background: var(--tag-emerald-bg);
   color: var(--tag-emerald-text);
+}
+.tag.stem {
+  background: var(--tag-teal-bg);
+  color: var(--tag-teal-text);
+}
+.tag.technology {
+  background: var(--tag-cyan-bg);
+  color: var(--tag-cyan-text);
 }

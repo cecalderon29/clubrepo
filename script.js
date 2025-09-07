@@ -6,9 +6,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   const overlay = document.getElementById("clubOverlay");
   const closeOverlay = document.getElementById("closeOverlay");
   const imgEl = document.getElementById("overlayImage");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
 
   let clubs = [];
   let selectedTag = "all";
+  let currentImages = [];
+  let currentIndex = 0;
 
   // Load clubs
   await fetch("./data.json")
@@ -75,8 +79,12 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById("overlayTitle").textContent = club.name;
     document.getElementById("tags").innerHTML = club.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join(" ");
     
-    if (club.images) {
-      imgEl.src = club.images;
+    // Handle gallery images
+    currentImages = club.images || [];
+    currentIndex = 0;
+    
+    if (currentImages.length > 0) {
+      imgEl.src = currentImages[currentIndex];
       imgEl.style.display = "block";
     } else {
       imgEl.style.display = "none";
@@ -87,6 +95,16 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById("overlayRoom").textContent = club.room || "Not specified";
 
     overlay.classList.remove("hide");
+
+    function showImage(index) {
+      if (currentImages.length > 0) {
+        currentIndex = (index + currentImages.length) % currentImages.length;
+        imgEl.src = currentImages[currentIndex];
+      }
+    }
+
+    prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+    nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
   }
 
   //Close overlay

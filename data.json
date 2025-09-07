@@ -8,7 +8,11 @@
     "sponsors": ["C. Hodge"],
     "description": "Explore various forms of visual arts.",
     "tags": ["Art", "Social"],
-    "images": "images/art.jpg"
+    "images": [
+    "images/art.jpg",
+    "images/art2.jpg",
+    "images/art3.png"
+    ]
   },
   {
     "name": "Chess Club",
@@ -19,7 +23,11 @@
     "sponsors": ["M. Steger"],
     "description": "Competitive chess team practicing strategies.",
     "tags": ["Games", "Academic"],
-    "images": "images/chess.jpg"
+    "images": [
+    "images/chess.jpg",
+    "images/chess.png",
+    "images/chess3.webp"
+    ]
 
   },
   {
@@ -31,18 +39,26 @@
     "sponsors": ["R. Smith"],
     "description": "Practice formal debating skills and compete.",
     "tags": ["Debate", "Leadership", "Academic"],
-    "images": "images/debate.jpg"
+    "images": [
+    "images/debate.jpg",
+    "images/debate2.jpg",
+    "images/debate3.jpg"
+    ]
 
   },
   {
-    "name": "Community Service Club",
+    "name": "Technology Club",
     "room": "Room 31",
     "schedule": "Every other week",
     "day": "Tuesday",
     "time": "7:10-7:35 AM",
     "sponsors": ["M. Bice"],
     "description": "Volunteer projects to give back to the community.",
-    "tags": ["Volunteer", "Leadership", "Social"],
-    "images": "images/communityservice.webp"
+    "tags": ["Technology", "STEM"],
+    "images": [
+    "images/tech1.jpg",
+    "images/tech2.jpg",
+    "images/tech3.jpg"
+    ]
   }
 ]
