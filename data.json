@@ -9,9 +9,9 @@
     "description": "Explore various forms of visual arts.",
     "tags": ["Art", "Social"],
     "images": [
-    "images/art.jpg",
-    "images/art2.jpg",
-    "images/art3.png"
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg"
     ]
   },
   {
@@ -24,9 +24,9 @@
     "description": "Competitive chess team practicing strategies.",
     "tags": ["Games", "Academic"],
     "images": [
-    "images/chess.jpg",
-    "images/chess.png",
-    "images/chess3.webp"
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg"
     ]
 
   },
@@ -40,9 +40,9 @@
     "description": "Practice formal debating skills and compete.",
     "tags": ["Debate", "Leadership", "Academic"],
     "images": [
-    "images/debate.jpg",
-    "images/debate2.jpg",
-    "images/debate3.jpg"
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg"
     ]
 
   },
@@ -56,9 +56,9 @@
     "description": "Volunteer projects to give back to the community.",
     "tags": ["Technology", "STEM"],
     "images": [
-    "images/tech1.jpg",
-    "images/tech2.jpg",
-    "images/tech3.jpg"
+    "images/image1.jpg",
+    "images/image2.jpg",
+    "images/image3.jpg"
     ]
   }
 ]

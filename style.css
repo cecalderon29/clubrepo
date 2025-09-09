@@ -65,23 +65,35 @@ h1 {
 /*phone styles */
 @media (max-width: 768px) {
   .header-section {
-    padding: 1rem;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #logo {
+    width: 30px !important;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #title {
+    font-size: 1.7rem;
+    margin: 0.5rem 0 ;
+    display: inline-block;
+    vertical-align: middle;
+    transform: scaleY(1.25);
+    
   }
 
   #searchInput {
     width: 100%;
     font-size: 1rem;
-  }
-
-  
-  #logo {
-    width: 85px !important;
-    
-  }
-
-  #title {
-    font-size: 1.8rem;
-    margin: 0.5rem 0 ;
   }
   #tagMenu button {
     font-size: 0.85rem;
@@ -218,8 +230,11 @@ h1 {
 
  /*logo styles */
 #logo {
-  display: block;
-  margin: 1rem auto;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+ 
+   
 }
 
 /* Card Grid Styles
