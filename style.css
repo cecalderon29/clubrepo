@@ -78,9 +78,10 @@ h1 {
     width: 85px !important;
     
   }
-  .title {
-    font-size: 1.7rem;
-    margin: 0.5rem 0;
+
+  #title {
+    font-size: 1.8rem;
+    margin: 0.5rem 0 ;
   }
   #tagMenu button {
     font-size: 0.85rem;
