@@ -333,6 +333,7 @@ h1 {
   max-height: 420px; 
   object-fit: cover; 
   border-radius: 10px; 
+  aspect-ratio: 16/9;
 }
 
 /* Arrows ON the image */
@@ -394,9 +395,9 @@ h1 {
   padding: 2rem;
   border-radius: 1rem;
   max-width: 600px;
-  width: 90%;
-  max-height: 80%;
-  overflow-y: auto;
+  width: 80vw;
+  max-height: 80vh;
+  overflow-y: hidden;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
 }
