@@ -17,5 +17,6 @@
   { "name": "Business" },
   { "name": "Environmental" },
   { "name": "Recreational"},
-  { "name": "Dance"}
+  { "name": "Dance"},
+  { "name": "Culture" }
 ]
