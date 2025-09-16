@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 
     <title>Club Directory</title>
     <link rel="stylesheet" href="style.css">
@@ -28,29 +30,54 @@
         <div class = "club-section">
             <p id = "clubCount"></p>
             <div class="card-grid" id="clubCards"></div>
+
+
             <div id="clubOverlay" class="overlay hide">
                 <div class="overlay-content">
                     <span id="closeOverlay" class="close-btn">&times;</span>
+
                     <h2 id="overlayTitle" ></h2>
-                    <div id = "tags"></div>
+                    <div id="tags" class="tag-centered"></div>
+
                     <div class = "gallery">
                         <img id="overlayImage" src="" alt="Club image" class="overlay-img">
                         <button id="prevBtn" class="gallery-btn">&#10094;</button>
                         <button id="nextBtn" class="gallery-btn">&#10095;</button>
-                    </div>    
-                    <p><strong>About:</strong></p>
-                    <p id="overlayDescription"></p>
-                    <div id = "overlayDetails">
-                        <p><strong>Time:</strong> <span id="overlayTime"></span></p>
-                        <p><strong>Room:</strong> <span id="overlayRoom"></span></p>
-                        <p><strong>Day:</strong> <span id="overlayDay"></span></p>
+                    </div>  
+
+                    <h3 class = "about"><strong>About:</strong></h3>
+                    <p class ="about" id="overlayDescription"></p>
+                    
+                    <div class="overlay-details">
+                    
+                        <!--LEFT SIDE-->
+                        <div class="overlay-left">
+                            <h3><strong> Meeting Details</strong></h3>
+                            <p><i data-lucide="clock"></i><span id="overlayTime"></span></p>
+                            <p><i data-lucide="calendar"></i> <span id="overlayDay"></span></p>
+                            <p><i data-lucide="map-pin"></i><span id="overlayRoom"></span></p>
+                            <h3><strong>Contact</strong></h3>   
+                            <p><i data-lucide="user"></i><span id="overlaySponsor"></span></p>
+                            <p><i data-lucide="mail"></i><span id="overlayEmail"></span></p>
+                        </div>
+                        <!--RIGHT SIDE-->
+                        <div class="overlay-right">
+                            <h3><strong>Membership</strong></h3>
+                            <p><i data-lucide="users"></i><span id="overlayReq"></span></p>
+                            <p><i data-lucide="dollar-sign"></i><span id="overlayDues"></span></p>
+                            <h3><strong>Social Media</strong></h3>
+                            <div id="overlaySocial" class="social-links"></div>
+                            
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     
     </div>
-    <script src="data.js"></script>
+    <script>lucide.createIcons() </script>
     <script src="script.js"></script>
 </body>
 </html>

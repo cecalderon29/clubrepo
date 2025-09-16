@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", async function () {
   const imgEl = document.getElementById("overlayImage");
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
+  const iconMap = {
+  instagram: "instagram",
+  twitter: "twitter",
+  facebook: "facebook",
+  website: "globe",
+  remind: "bell",
+
+  };
 
   let clubs = [];
   let selectedTag = "all";
@@ -64,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         </div>
       `;
       
-      // 👇 Overlay open on click
+      //  Overlay open on click
       card.addEventListener("click", () => openOverlay(club));
        
       cardGrid.appendChild(card);
@@ -72,40 +80,77 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       updateClubCount(clubsToRender.length);
   }
-  
+    function showImage(index) {
+    console.log("showImage called with index:", index);
+    if (currentImages.length > 0) {
+      currentIndex = (index + currentImages.length) % currentImages.length;
+      imgEl.src = currentImages[currentIndex];
+    }
+  }
+
   // Overlay functionality
   function openOverlay(club) {
+    overlay.classList.remove("hide");
+
     console.log("openOverlay called with club:", club);
     document.getElementById("overlayTitle").textContent = club.name;
-    document.getElementById("tags").innerHTML = club.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join(" ");
+    document.getElementById("tags").innerHTML = club.tags.map(tag =>
+      `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`
+    ).join(" ");
     
     // Handle gallery images
     currentImages = club.images || [];
     currentIndex = 0;
-    
+
     if (currentImages.length > 0) {
       imgEl.src = currentImages[currentIndex];
       imgEl.style.display = "block";
     } else {
       imgEl.style.display = "none";
     }
+
     document.getElementById("overlayDescription").textContent = club.description;
     document.getElementById("overlayTime").textContent = club.time || "Not specified";
     document.getElementById("overlayDay").textContent = club.day || "Not specified";
     document.getElementById("overlayRoom").textContent = club.room || "Not specified";
 
-    overlay.classList.remove("hide");
+    // Membership
+    document.getElementById("overlayReq").textContent = club.requirements || "Open to all students";
+    document.getElementById("overlayDues").textContent = club.dues || "None";
+    // Contact
+    document.getElementById("overlaySponsor").textContent = club.sponsors || "Not specified";
+    document.getElementById("overlayEmail").textContent = club.emails || "Not specified";
 
-    function showImage(index) {
-      if (currentImages.length > 0) {
-        currentIndex = (index + currentImages.length) % currentImages.length;
-        imgEl.src = currentImages[currentIndex];
-      }
-    }
+    // Social Media
+    const socialEl = document.getElementById("overlaySocial");
+    socialEl.innerHTML = (club.social || []).map(link => {
+      let platform = "";
 
-    prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
-    nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+      if (link.url.includes("instagram.com")) platform = "instagram";
+      else if (link.url.includes("facebook.com")) platform = "facebook";
+      else if (link.url.includes("twitter.com") || link.url.includes("x.com")) platform = "twitter";
+      else if (link.url.includes("remind.com")) platform = "remind";
+      else if (link.url.includes("http")) platform = "website";
+      else platform = "website"; // default icon
+
+      return `
+        <a href="${link.url}" target="_blank" class="social-pill ${platform}">
+          <i data-lucide="${platform === "remind" ? "bell" : platform}"></i>
+          <span>${link.label}</span>
+        </a>
+      `;
+    }).join("");
+
+    // re-render lucide icons
+    lucide.createIcons();
+
+    
   }
+
+  // ✅ attach listeners only once
+  prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+  nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+
 
   //Close overlay
   document.getElementById("closeOverlay").addEventListener("click", () => {
