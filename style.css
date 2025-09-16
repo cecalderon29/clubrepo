@@ -53,7 +53,7 @@ body {
   margin: 20px 0;
 }
 .container {
-  max-width: 900px;
+  max-width: 90vw;
   margin: 0 auto;
 }
 h1 {
@@ -255,7 +255,7 @@ h1 {
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(225px, .75fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, .5fr));
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
