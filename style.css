@@ -78,6 +78,7 @@ h1 {
   #logo {
     width: 30px !important;
     margin: 0;
+    padding: 0;
     display: inline-block;
     
   }
@@ -87,7 +88,7 @@ h1 {
     margin: 0.5rem 0 ;
     display: inline-block;
     vertical-align: middle;
-    transform: scaleY(1.25);
+    
     
   }
 
