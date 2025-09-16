@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       else if (link.url.includes("twitter.com") || link.url.includes("x.com")) platform = "twitter";
       else if (link.url.includes("remind.com")) platform = "remind";
       else if (link.url.includes("http")) platform = "website";
+      else platform = "website"; // default icon
 
       return `
         <a href="${link.url}" target="_blank" class="social-pill ${platform}">

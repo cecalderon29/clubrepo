@@ -109,6 +109,12 @@ h1 {
   .club-card {
     padding: 0.75rem;
   }
+  .overlay-content {
+    padding: 1rem 1.7rem!important;
+    max-width: 100vw!important;
+    max-height: 100vh!important;
+    overflow-y: auto!important; /* enable scroll on small screens */
+  }
   
 }
 /* Search Filter Styles
@@ -249,7 +255,7 @@ h1 {
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-template-columns: repeat(auto-fill, minmax(225px, .75fr));
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
@@ -502,46 +508,85 @@ h1 {
 .social-pill.instagram { background: #f09433; color: white; }
 .social-pill.facebook { background: #1877f2; color: white; }
 .social-pill.twitter { background: #1da1f2; color: white; }
-.social-pill.remind { background: #a2cdff; color: white; }
+.social-pill.remind { background: #3090ff; color: white; }
 .social-pill.website { background: #333; color: white; }
 
 /* Tag Colors */
-
-.tag.volunteer {
-  background: var(--tag-red-bg);
-  color: var(--tag-red-text);
+.tag.academic {
+  background: var(--tag-amber-bg);
+  color: var(--tag-amber-text);
 }
 .tag.art {
   background: var(--tag-orange-bg);
   color: var(--tag-orange-text);
 }
-.tag.academic {
-  background: var(--tag-amber-bg);
-  color: var(--tag-amber-text);
-}
-.tag.social {
-  background: var(--tag-yellow-bg);
-  color: var(--tag-yellow-text);
+.tag.preforming-arts {
+  background: var(--tag-purple-bg);
+  color: var(--tag-purple-text);
 }
 .tag.games {
   background: var(--tag-lime-bg);
   color: var(--tag-lime-text);
 } 
+.tag.leadership {
+  background: var(--tag-emerald-bg);
+  color: var(--tag-emerald-text);
+}
+.tag.social {
+  background: var(--tag-yellow-bg);
+  color: var(--tag-yellow-text);
+}
 .tag.debate {
   background: var(--tag-green-bg);
   color: var(--tag-green-text);
 }
-.tag.leadership {
-  background: var(--tag-emerald-bg);
-  color: var(--tag-emerald-text);
+.tag.volunteer {
+  background: var(--tag-red-bg);
+  color: var(--tag-red-text);
 }
 .tag.stem {
   background: var(--tag-teal-bg);
   color: var(--tag-teal-text);
 }
+.tag.languages {
+  background: var(--tag-blue-bg);
+  color: var(--tag-blue-text);
+}
+.tag.medical {
+  background: var(--tag-indigo-bg);
+  color: var(--tag-indigo-text);
+}
+.tag.music {
+  background: var(--tag-fuchsia-bg);
+  color: var(--tag-fuchsia-text);
+}
+.tag.sports {
+  background: var(--tag-pink-bg);
+  color: var(--tag-pink-text);
+}
+.tag.writing {
+  background: var(--tag-rose-bg);
+  color: var(--tag-rose-text);
+}
 .tag.technology {
   background: var(--tag-cyan-bg);
   color: var(--tag-cyan-text);
+}
+.tag.business {
+  background: var(--tag-stone-bg);
+  color: var(--tag-stone-text);
+}
+.tag.environmental {
+  background: var(--tag-green-bg);
+  color: var(--tag-green-text);
+}
+.tag.recreational {
+  background: var(--tag-lime-bg);
+  color: var(--tag-lime-text);
+}
+.tag.dance {
+  background: var(--tag-pink-bg);
+  color: var(--tag-pink-text);
 }
 .tag.culture {
   background: var(--tag-sky-bg);
