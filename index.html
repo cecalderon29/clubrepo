@@ -1,83 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-
-    <title>Club Directory</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCHS Club Directory</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class = "container">
-        <div class = "header-section">
-            <img src="Redhawk.png" id="logo" alt="NCHS Redhawk Logo" width="150">
-            <h1 id = "title" >NCHS Club Directory</h1>
-        </div>
-        <div class ="search-filter">
-            <div class="search-bar">
-                <input type="text" id ="searchInput" placeholder="Search clubs..."/>
-            </div>
-        </div>
 
-        <p class = "filter-label">Filter by Category:</p>
-        
-        <button id="toggleFilters" >Toggle Tag Filter</button>
-        <div id="tagMenu" class="tag-menu"></div>
-        <hr class = "divider">
-
-        <div class = "club-section">
-            <p id = "clubCount"></p>
-            <div class="card-grid" id="clubCards"></div>
-
-
-            <div id="clubOverlay" class="overlay hide">
-                <div class="overlay-content">
-                    <span id="closeOverlay" class="close-btn">&times;</span>
-
-                    <h2 id="overlayTitle" ></h2>
-                    <div id="tags" class="tag-centered"></div>
-
-                    <div class = "gallery">
-                        <img id="overlayImage" src="" alt="Club image" class="overlay-img">
-                        <button id="prevBtn" class="gallery-btn">&#10094;</button>
-                        <button id="nextBtn" class="gallery-btn">&#10095;</button>
-                    </div>  
-
-                    <h3 class = "about"><strong>About:</strong></h3>
-                    <p class ="about" id="overlayDescription"></p>
-                    
-                    <div class="overlay-details">
-                    
-                        <!--LEFT SIDE-->
-                        <div class="overlay-left">
-                            <h3><strong> Meeting Details</strong></h3>
-                            <p><i data-lucide="clock"></i><span id="overlayTime"></span></p>
-                            <p><i data-lucide="calendar"></i> <span id="overlayDay"></span></p>
-                            <p><i data-lucide="map-pin"></i><span id="overlayRoom"></span></p>
-                            <h3><strong>Contact</strong></h3>   
-                            <p><i data-lucide="user"></i><span id="overlaySponsor"></span></p>
-                            <p><i data-lucide="mail"></i><span id="overlayEmail"></span></p>
-                        </div>
-                        <!--RIGHT SIDE-->
-                        <div class="overlay-right">
-                            <h3><strong>Membership</strong></h3>
-                            <p><i data-lucide="users"></i><span id="overlayReq"></span></p>
-                            <p><i data-lucide="dollar-sign"></i><span id="overlayDues"></span></p>
-                            <h3><strong>Social Media</strong></h3>
-                            <div id="overlaySocial" class="social-links"></div>
-                            
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    
+  <section class="hero">
+    <h1>NCHS</h1>
+    <h2>Club Directory</h2>
+    <p>making student involvement <span>easy</span>.</p>
+    <div class="buttons">
+      <a href="clubs/index.html">Find Clubs</a>
+      <a href="calendar/index.html">Browse Calendar</a>
     </div>
-    <script>lucide.createIcons() </script>
-    <script src="script.js"></script>
+
+  </section>
+
 </body>
 </html>
