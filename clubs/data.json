@@ -1,193 +1,442 @@
 [
   {
-    "name": "Anime Club",
-    "tags": ["Culture", "Art", "Social"],
-
-    "room": "Room 203",
-    "schedule": "Weekly",
-    "day": "Wednesday",
-    "time": "3:30 - 4:30 PM",
-
-    "sponsors": ["Ms. Johnson"],
-    "emails": ["mJd2@example.com"],
-
-    "description": "A community for fans of anime and manga to watch, discuss, and share recommendations.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Open to all students",
-    "dues": "$10 per semester",
-
-    "social": [
-      { "label": "@nchs_anime", "url": "https://instagram.com/nchs_anime" },
-      { "label": "NCHS Anime Club", "url": "https://facebook.com/nchs_anime" },
-      { "label": "Anime Club Remind", "url": "https://www.remind.com/join/animeclub" }
-    ]
-  },
-  {
-    "name": "Chess Club",
-    "tags": ["Games", "Academic"],
-
-    "room": "Library",
-    "schedule": "Weekly",
-    "day": "Friday",
-    "time": "3:00 - 4:15 PM",
-
-    "sponsors": ["Mr. Carter", "Ms. Carter"],
-    "emails": ["carterm@example.com", "carterm1@example.com"],
-
-    "description": "Students of all levels come together to learn, play, and compete in chess.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Open to all skill levels",
-    "dues": "None",
-
-    "social": [
-      { "label": "@nchs_chess", "url": "https://instagram.com/nchs_chess" }
-    ]
-  },
-  {
-    "name": "Environmental Club",
-    "tags": ["Volunteer", "Leadership", "Social"],
-
-    "room": "Room 108",
-    "schedule": "Bi-Weekly",
-    "day": "Tuesday",
-    "time": "3:15 - 4:00 PM",
-
-    "sponsors": ["Mrs. Lee", "Mr. Kim"],
-    "emails": ["leeE@example.com", "kimK@example.com"],
-
-    "description": "Promotes sustainability, organizes recycling drives, and spreads awareness about climate change.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Attend at least 2 meetings per month",
-    "dues": "$5 per semester",
-
-    "social": [
-      { "label": "@nchs_enviro", "url": "https://instagram.com/nchs_enviro" }
-    ]
-  },
-  {
-    "name": "Debate Club",
-    "tags": ["Leadership", "Academic", "Social"],
-
-    "room": "Room 305",
-    "schedule": "Weekly",
-    "day": "Thursday",
-    "time": "3:20 - 4:40 PM",
-
-    "sponsors": ["Ms. Patel"],
-    "emails": ["patelM@example.com"],
-
-    "description": "Develops skills in argumentation, public speaking, and critical thinking through practice debates and competitions.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Active participation required",
-    "dues": "$15 per semester",
-
-    "social": [
-      { "label": "Remind Code: @debateNCHS", "url": "https://www.remind.com/join/debateNCHS" }
-    ]
-  },
-  {
-    "name": "Robotics Club",
-    "tags": ["STEM", "Technology", "Leadership"],
-
-    "room": "Tech Lab",
+    "name": "Central Times",
+    "tags": ["Writing", "Journalism"],
+    "room": "218",
     "schedule": "Weekly",
     "day": "Monday",
-    "time": "3:30 - 5:00 PM",
-
-    "sponsors": ["Mr. Thompson"],
-    "emails": ["thompson@example.com"],
-
-    "description": "Develops skills in robotics, electronics, and programming through hands-on projects and competitions.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Attend at least 2 meetings per month",
-    "dues": "$20 per semester",
-
+    "time": "3:20-4:20 PM",
+    "sponsors": ["K. Carlson", "N. Weiss"],
+    "emails": ["kcarlson@naperville203.org", "nweiss@naperville203.org"],
+    "description": "School newspaper focusing on student journalism and reporting.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Enrollment in journalism course",
+    "dues": "$10 per semester",
     "social": [
-      { "label": "@nchs_robotics", "url": "https://instagram.com/nchs_robotics" }
+      { "label": "@centraltimes", "url": "https://instagram.com/centraltimes" },
+      { "label": "Central Times FB", "url": "https://facebook.com/centraltimes" },
+      { "label": "Central Times Remind", "url": "https://www.remind.com/join/centraltimes" }
     ]
   },
   {
-    "name": "Art Club",
-    "tags": ["Art", "Social"],
-
-    "room": "Art Room",
+    "name": "HOSA",
+    "tags": ["Medical", "Competition"],
+    "room": "313",
     "schedule": "Weekly",
-    "day": "Wednesday",
-    "time": "3:30 - 4:30 PM",
-
-    "sponsors": ["Ms. Lee"],
-    "emails": ["leeE@example.com"],
-
-    "description": "Develops skills in art, design, and creativity through hands-on projects and competitions.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Open to all students",
-    "dues": "Free",
-
+    "day": "Monday",
+    "time": "7:10-7:37 AM",
+    "sponsors": ["K. Smith"],
+    "emails": ["ksmith2@naperville203.org"],
+    "description": "Future Health Professionals club competing in health-related competitions.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in healthcare",
+    "dues": "$15 per year",
     "social": [
-      { "label": "@nchs_art", "url": "https://instagram.com/nchs_art" }
+      { "label": "@hosa_nchs", "url": "https://instagram.com/hosa_nchs" },
+      { "label": "HOSA FB", "url": "https://facebook.com/hosa_nchs" },
+      { "label": "HOSA Remind", "url": "https://www.remind.com/join/hosa_nchs" }
     ]
   },
-  
   {
-    "name": "Math Club",
-    "tags": ["STEM","Academic"],
-
-    "room": "Room 310",
+    "name": "Literary Magazine",
+    "tags": ["Writing", "Art"],
+    "room": "LC",
+    "schedule": "Every Other Week",
+    "day": "Monday",
+    "time": "3:15-4:15 PM",
+    "sponsors": ["J. Hayward"],
+    "emails": ["jhayward@naperville203.org"],
+    "description": "Magazine showcasing student writing, poetry, and artwork.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Submission of work",
+    "dues": "$10 per year",
+    "social": [
+      { "label": "@litmag_nchs", "url": "https://instagram.com/litmag_nchs" },
+      { "label": "Lit Mag FB", "url": "https://facebook.com/litmag_nchs" },
+      { "label": "Lit Mag Remind", "url": "https://www.remind.com/join/litmag_nchs" }
+    ]
+  },
+  {
+    "name": "Jazz Studio Orchestra",
+    "tags": ["Music", "Performance"],
+    "room": "Band Room",
+    "schedule": "Weekly",
+    "day": "Monday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["D. Alstadt"],
+    "emails": ["dalstadt@naperville203.org"],
+    "description": "Orchestra for jazz-focused instrumental students performing weekly.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Audition required",
+    "dues": "$20 per semester",
+    "social": [
+      { "label": "@jazzstudio_nchs", "url": "https://instagram.com/jazzstudio_nchs" },
+      { "label": "Jazz Studio FB", "url": "https://facebook.com/jazzstudio_nchs" },
+      { "label": "Jazz Studio Remind", "url": "https://www.remind.com/join/jazzstudio_nchs" }
+    ]
+  },
+  {
+    "name": "National Honor Society",
+    "tags": ["Leadership", "Academic"],
+    "room": "Auditorium",
+    "schedule": "Monthly",
+    "day": "Monday",
+    "time": "7:10-7:37 AM",
+    "sponsors": ["S. Rauen", "A. Hastings"],
+    "emails": ["srauen@naperville203.org", "ahastings@naperville203.org"],
+    "description": "Honors club recognizing academic achievement and leadership in upperclassmen.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Invitation only (Juniors/Seniors)",
+    "dues": "$10 per semester",
+    "social": [
+      { "label": "@nhs_nchs", "url": "https://instagram.com/nhs_nchs" },
+      { "label": "NHS FB", "url": "https://facebook.com/nhs_nchs" },
+      { "label": "NHS Remind", "url": "https://www.remind.com/join/nhs_nchs" }
+    ]
+  },
+  {
+    "name": "Neuroscience Club",
+    "tags": ["STEM", "Science"],
+    "room": "220",
+    "schedule": "Weekly",
+    "day": "Monday",
+    "time": "3:15-4:15 PM",
+    "sponsors": ["L. Zwickert"],
+    "emails": ["lzwickert@naperville203.org"],
+    "description": "Students explore neuroscience topics through experiments and discussion.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in neuroscience",
+    "dues": "$5 per semester",
+    "social": [
+      { "label": "@neuroclub_nchs", "url": "https://instagram.com/neuroclub_nchs" },
+      { "label": "Neuroscience FB", "url": "https://facebook.com/neuroclub_nchs" },
+      { "label": "Neuroscience Remind", "url": "https://www.remind.com/join/neuroclub_nchs" }
+    ]
+  },
+  {
+    "name": "Redhawk Songbirds",
+    "tags": ["Music", "Performance"],
+    "room": "84",
+    "schedule": "Twice Weekly",
+    "day": "Monday",
+    "time": "7:10-7:37 AM",
+    "sponsors": ["L. Berryhill"],
+    "emails": ["lberryhill@naperville203.org"],
+    "description": "Choral ensemble for advanced female vocalists.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Audition required",
+    "dues": "$15 per semester",
+    "social": [
+      { "label": "@redhawksongbirds", "url": "https://instagram.com/redhawksongbirds" },
+      { "label": "Redhawk Songbirds FB", "url": "https://facebook.com/redhawksongbirds" },
+      { "label": "Redhawk Songbirds Remind", "url": "https://www.remind.com/join/redhawksongbirds" }
+    ]
+  },
+  {
+    "name": "Tri-M Honor Society",
+    "tags": ["Music", "Leadership"],
+    "room": "82",
+    "schedule": "1-2x a month",
+    "day": "Monday",
+    "time": "7:00-7:37 AM",
+    "sponsors": ["J. Gross", "F. Tsou"],
+    "emails": ["jgross@naperville203.org", "ftsou@naperville203.org"],
+    "description": "Music honor society recognizing student musicians for excellence and leadership.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Enrollment in music program",
+    "dues": "$10 per year",
+    "social": [
+      { "label": "@trim_nchs", "url": "https://instagram.com/trim_nchs" },
+      { "label": "Tri-M FB", "url": "https://facebook.com/trim_nchs" },
+      { "label": "Tri-M Remind", "url": "https://www.remind.com/join/trim_nchs" }
+    ]
+  },
+  {
+    "name": "Yearbook",
+    "tags": ["Writing", "Art", "Journalism"],
+    "room": "216",
+    "schedule": "Weekly",
+    "day": "Monday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["N. Weiss", "S. Albiniak"],
+    "emails": ["nweiss@naperville203.org", "salbiniak@naperville203.org"],
+    "description": "Student-run yearbook documenting the school year with photos and stories.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Enrollment in yearbook course or application",
+    "dues": "$10 per semester",
+    "social": [
+      { "label": "@yearbook_nchs", "url": "https://instagram.com/yearbook_nchs" },
+      { "label": "Yearbook FB", "url": "https://facebook.com/yearbook_nchs" },
+      { "label": "Yearbook Remind", "url": "https://www.remind.com/join/yearbook_nchs" }
+    ]
+  },
+  {
+    "name": "German Club",
+    "tags": ["Culture", "Languages"],
+    "room": "110",
     "schedule": "Weekly",
     "day": "Tuesday",
-    "time": "3:30 - 4:30 PM",
-
-    "sponsors": ["Ms. Patel"],
-    "emails": ["patelM@example.com"],
-
-    "description": "Develops skills in math, statistics, and problem-solving through hands-on projects and competitions.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Attend at least 2 meetings per month",
+    "time": "3:15-4:15 PM",
+    "sponsors": ["A. Schultz"],
+    "emails": ["ajschultz@naperville203.org"],
+    "description": "A club for students interested in German language and culture.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in language",
     "dues": "$5 per semester",
-
     "social": [
-      { "label": "@nchs_math", "url": "https://instagram.com/nchs_math" },
-      { "label": "Math Club Remind", "url": "https://www.remind.com/join/mathclub" }
+      { "label": "@germanclub", "url": "https://instagram.com/germanclub" },
+      { "label": "German Club FB", "url": "https://facebook.com/germanclub" },
+      { "label": "German Club Remind", "url": "https://www.remind.com/join/germanclub" }
     ]
   },
-  
   {
-    "name": "Jazz Band",
-    "tags": ["Music", "Social"],
-
-    "room": "Music Room",
+    "name": "HOSA",
+    "tags": ["Medical", "Competition"],
+    "room": "313",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "7:10-7:37 AM",
+    "sponsors": ["K. Smith"],
+    "emails": ["ksmith2@naperville203.org"],
+    "description": "Future Health Professionals club competing in health-related competitions.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in healthcare",
+    "dues": "$15 per year",
+    "social": [
+      { "label": "@hosa_nchs", "url": "https://instagram.com/hosa_nchs" },
+      { "label": "HOSA FB", "url": "https://facebook.com/hosa_nchs" },
+      { "label": "HOSA Remind", "url": "https://www.remind.com/join/hosa_nchs" }
+    ]
+  },
+  {
+    "name": "Literary Magazine",
+    "tags": ["Writing", "Art"],
+    "room": "LC",
+    "schedule": "Every Other Week",
+    "day": "Tuesday",
+    "time": "3:15-4:15 PM",
+    "sponsors": ["J. Hayward"],
+    "emails": ["jhayward@naperville203.org"],
+    "description": "Magazine showcasing student writing, poetry, and artwork.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Submission of work",
+    "dues": "$10 per year",
+    "social": [
+      { "label": "@litmag_nchs", "url": "https://instagram.com/litmag_nchs" },
+      { "label": "Lit Mag FB", "url": "https://facebook.com/litmag_nchs" },
+      { "label": "Lit Mag Remind", "url": "https://www.remind.com/join/litmag_nchs" }
+    ]
+  },
+  {
+    "name": "Jazz Studio Orchestra",
+    "tags": ["Music", "Performance"],
+    "room": "Band Room",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["D. Alstadt"],
+    "emails": ["dalstadt@naperville203.org"],
+    "description": "Orchestra for jazz-focused instrumental students performing weekly.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Audition required",
+    "dues": "$20 per semester",
+    "social": [
+      { "label": "@jazzstudio_nchs", "url": "https://instagram.com/jazzstudio_nchs" },
+      { "label": "Jazz Studio FB", "url": "https://facebook.com/jazzstudio_nchs" },
+      { "label": "Jazz Studio Remind", "url": "https://www.remind.com/join/jazzstudio_nchs" }
+    ]
+  },
+  {
+    "name": "National Honor Society",
+    "tags": ["Leadership", "Academic"],
+    "room": "Auditorium",
+    "schedule": "Monthly",
+    "day": "Tuesday",
+    "time": "7:10-7:37 AM",
+    "sponsors": ["S. Rauen", "A. Hastings"],
+    "emails": ["srauen@naperville203.org", "ahastings@naperville203.org"],
+    "description": "Honors club recognizing academic achievement and leadership in upperclassmen.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Invitation only (Juniors/Seniors)",
+    "dues": "$10 per semester",
+    "social": [
+      { "label": "@nhs_nchs", "url": "https://instagram.com/nhs_nchs" },
+      { "label": "NHS FB", "url": "https://facebook.com/nhs_nchs" },
+      { "label": "NHS Remind", "url": "https://www.remind.com/join/nhs_nchs" }
+    ]
+  },
+  {
+    "name": "Neuroscience Club",
+    "tags": ["STEM", "Science"],
+    "room": "220",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:15-4:15 PM",
+    "sponsors": ["L. Zwickert"],
+    "emails": ["lzwickert@naperville203.org"],
+    "description": "Students explore neuroscience topics through experiments and discussion.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in neuroscience",
+    "dues": "$5 per semester",
+    "social": [
+      { "label": "@neuroclub_nchs", "url": "https://instagram.com/neuroclub_nchs" },
+      { "label": "Neuroscience FB", "url": "https://facebook.com/neuroclub_nchs" },
+      { "label": "Neuroscience Remind", "url": "https://www.remind.com/join/neuroclub_nchs" }
+    ]
+  },
+  {
+    "name": "Civic Leaders of America (CLA)",
+    "tags": ["Leadership", "Community"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["Emily Yung"],
+    "emails": ["eyung@naperville203.org"],
+    "description": "Students participate in local service projects and develop leadership skills.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Commitment to 3-5 weekend events",
+    "dues": "$10 per semester",
+    "social": [
+      { "label": "@cla_nchs", "url": "https://instagram.com/cla_nchs" },
+      { "label": "CLA FB", "url": "https://facebook.com/cla_nchs" },
+      { "label": "CLA Remind", "url": "https://www.remind.com/join/cla_nchs" }
+    ]
+  },
+  {
+    "name": "Cookies for a Cause",
+    "tags": ["Social", "Service"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["Eric Novak"],
+    "emails": ["enovak@naperville203.org"],
+    "description": "Students bake and sell cookies to raise money for charity.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in baking and fundraising",
+    "dues": "$5 per semester",
+    "social": [
+      { "label": "@cookiescause_nchs", "url": "https://instagram.com/cookiescause_nchs" },
+      { "label": "Cookies FB", "url": "https://facebook.com/cookiescause_nchs" },
+      { "label": "Cookies Remind", "url": "https://www.remind.com/join/cookiescause_nchs" }
+    ]
+  },
+  {
+    "name": "Computer Science Club",
+    "tags": ["STEM", "Technology"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Tuesday",
+    "time": "3:30-5:30 PM",
+    "sponsors": ["Derek Miller"],
+    "emails": ["djmiller@naperville203.org"],
+    "description": "Students learn programming, participate in coding challenges, and build projects.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in coding",
+    "dues": "$10 per semester",
+    "social": [
+      { "label": "@csclub_nchs", "url": "https://instagram.com/csclub_nchs" },
+      { "label": "CS Club FB", "url": "https://facebook.com/csclub_nchs" },
+      { "label": "CS Club Remind", "url": "https://www.remind.com/join/csclub_nchs" }
+    ]
+  },
+  {
+    "name": "Council for Exceptional Children (CEC)",
+    "tags": ["Leadership", "Community"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Wednesday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["Nicole Prousa", "Breanne Nikkel"],
+    "emails": ["nprousa@naperville203.org", "bnikkel@naperville203.org"],
+    "description": "Club supporting students with exceptional needs through advocacy and events.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Commitment to service",
+    "dues": "$5 per semester",
+    "social": [
+      { "label": "@cec_nchs", "url": "https://instagram.com/cec_nchs" },
+      { "label": "CEC FB", "url": "https://facebook.com/cec_nchs" },
+      { "label": "CEC Remind", "url": "https://www.remind.com/join/cec_nchs" }
+    ]
+  },
+  {
+    "name": "Culinary Club",
+    "tags": ["Social", "Food"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Wednesday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["Amanda Haiser"],
+    "emails": ["ahaiser@naperville203.org"],
+    "description": "Students explore cooking techniques, recipes, and culinary arts projects.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in cooking",
+    "dues": "$15 per semester",
+    "social": [
+      { "label": "@culinary_nchs", "url": "https://instagram.com/culinary_nchs" },
+      { "label": "Culinary FB", "url": "https://facebook.com/culinary_nchs" },
+      { "label": "Culinary Remind", "url": "https://www.remind.com/join/culinary_nchs" }
+    ]
+  },
+  {
+    "name": "Dungeons & Dragons Club",
+    "tags": ["Games", "Social"],
+    "room": "TBD",
     "schedule": "Weekly",
     "day": "Thursday",
-    "time": "3:30 - 4:30 PM",
-
-    "sponsors": ["Mr. Brown"],
-    "emails": [" brown@example.com"],
-
-    "description": "A community for students interested in jazz music to practice, perform, and collaborate.",
-
-    "images": [ "images/image1.jpg", "images/image2.jpg", "images/image3.jpg" ],
-
-    "requirements": "Audition required",
-    "dues": "$30 per semester",
-
+    "time": "3:30-5:00 PM",
+    "sponsors": ["Christine Filer"],
+    "emails": ["cfiler@naperville203.org"],
+    "description": "Club for students to play tabletop role-playing games and collaborate on campaigns.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in tabletop gaming",
+    "dues": "$5 per semester",
     "social": [
-      { "label": "@nchs_jazz", "url": "https://instagram.com/nchs_jazz" },
-      { "label": "Jazz Band Remind", "url": "https://www.remind.com/join/jazzband" },
-      { "label": "Jazz Band Website", "url": "https://jazzbandnchs.com/" }
+      { "label": "@dnd_nchs", "url": "https://instagram.com/dnd_nchs" },
+      { "label": "D&D FB", "url": "https://facebook.com/dnd_nchs" },
+      { "label": "D&D Remind", "url": "https://www.remind.com/join/dnd_nchs" }
+    ]
+  },
+  {
+    "name": "ECO Club",
+    "tags": ["STEM", "Environment"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Thursday",
+    "time": "3:30-4:30 PM",
+    "sponsors": ["Paige Lundquist"],
+    "emails": ["plundquist@naperville203.org"],
+    "description": "Students promote environmental awareness and participate in eco-friendly projects.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in sustainability",
+    "dues": "$5 per semester",
+    "social": [
+      { "label": "@eco_nchs", "url": "https://instagram.com/eco_nchs" },
+      { "label": "ECO FB", "url": "https://facebook.com/eco_nchs" },
+      { "label": "ECO Remind", "url": "https://www.remind.com/join/eco_nchs" }
+    ]
+  },
+  {
+    "name": "ESports",
+    "tags": ["Games", "Competition"],
+    "room": "TBD",
+    "schedule": "Weekly",
+    "day": "Friday",
+    "time": "3:30-5:30 PM",
+    "sponsors": ["Lindsey Page", "Megan Cosgrove", "Matt Leuer"],
+    "emails": ["lpage@naperville203.org", "mcosgrove@naperville203.org", "mleuer@naperville203.org"],
+    "description": "Competitive gaming club participating in school and regional eSports tournaments.",
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+    "requirements": "Interest in competitive gaming",
+    "dues": "$15 per semester",
+    "social": [
+      { "label": "@esports_nchs", "url": "https://instagram.com/esports_nchs" },
+      { "label": "ESports FB", "url": "https://facebook.com/esports_nchs" },
+      { "label": "ESports Remind", "url": "https://www.remind.com/join/esports_nchs" }
     ]
   }
+
 ]
+
+

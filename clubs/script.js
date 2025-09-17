@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Tag buttons
     tags.forEach(tag => {
+        
       const btn = document.createElement("button");
       btn.classList.add("tag-filter");
       btn.dataset.tag = tag.name.toLowerCase().replace(/\s+/g, '-');

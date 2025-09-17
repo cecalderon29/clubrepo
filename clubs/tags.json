@@ -6,7 +6,7 @@
   { "name": "Leadership" },
   { "name": "Social" },
   { "name": "Debate" },
-  { "name": "Volunteer" },
+  { "name": "Service" },
   { "name": "STEM" },
   { "name": "Languages" },
   { "name": "Medical"},
@@ -15,8 +15,14 @@
   { "name": "Writing" },
   { "name": "Technology"},
   { "name": "Business" },
-  { "name": "Environmental" },
-  { "name": "Recreational"},
+  { "name": "Environment" },
+  { "name": "Recreation"},
   { "name": "Dance"},
-  { "name": "Culture" }
+  { "name": "Culture" },
+  { "name": "Science" },
+  { "name": "Performance" },
+  { "name": "Journalism" },
+  { "name": "Competition" },
+  { "name": "Community" },
+  { "name": "Food" }
 ]

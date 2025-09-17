@@ -35,6 +35,18 @@
   --tag-rose-text: oklch(50.2% 0.176 40.861);
   --tag-stone-bg: oklch(92.5% 0.009 261.318);
   --tag-stone-text: oklch(37.4% 0.01 67.558);
+  --tag-cobalt-bg: oklch(92.5% 0.02 250.318);
+  --tag-cobalt-text: oklch(42.4% 0.176 255.558);
+  --tag-orange-bg: oklch(95.4% 0.038 75.164);
+  --tag-orange-text: oklch(55.3% 0.195 38.402);
+  --tag-forest-bg: oklch(96.2% 0.044 156.743);
+  --tag-forest-text: oklch(52.7% 0.154 150.069);
+  --tag-hPink-bg: oklch(94.6% 0.03 27.596);
+  --tag-hPink-text: oklch(50.289% 0.18986 357.248);
+  --tag-yellow-bg: oklch(97.3% 0.071 103.193);
+  --tag-yellow-text: oklch(55.4% 0.135 66.442);
+  --tag-imperial-bg:  oklch(93.6% 0.032 17.717);
+  --tag-imperial-text: oklch(44.4% 0.177 26.899);
   
 }
 /** * General Styles
@@ -523,7 +535,7 @@ h1 {
   background: var(--tag-green-bg);
   color: var(--tag-green-text);
 }
-.tag.volunteer {
+.tag.service {
   background: var(--tag-red-bg);
   color: var(--tag-red-text);
 }
@@ -559,11 +571,11 @@ h1 {
   background: var(--tag-stone-bg);
   color: var(--tag-stone-text);
 }
-.tag.environmental {
+.tag.environment {
   background: var(--tag-green-bg);
   color: var(--tag-green-text);
 }
-.tag.recreational {
+.tag.recreation {
   background: var(--tag-lime-bg);
   color: var(--tag-lime-text);
 }
@@ -575,11 +587,27 @@ h1 {
   background: var(--tag-sky-bg);
   color: var(--tag-sky-text);
 }
-.tag.competitive {
+.tag.competition {
   background: var(--tag-orange-bg);
   color: var(--tag-orange-text);
 }
-.tag.preformance {
+.tag.performance {
   background: var(--tag-cobalt-bg);
   color: var(--tag-cobalt-text);
+}
+.tag.journalism {
+  background: var(--tag-hPink-bg);
+  color: var(--tag-hPink-text);
+}
+.tag.science {
+  background: var(--tag-forest-bg);
+  color: var(--tag-forest-text);
+}
+.tag.community {
+  background: var(--tag-yellow-bg);
+  color: var(--tag-yellow-text);
+}
+.tag.food {
+  background: var(--tag-imperial-bg);
+  color: var(--tag-imperial-text);
 }
