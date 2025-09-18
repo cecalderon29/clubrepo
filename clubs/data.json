@@ -190,25 +190,6 @@
     ]
   },
   {
-    "name": "HOSA",
-    "tags": ["Medical", "Competition"],
-    "room": "313",
-    "schedule": "Weekly",
-    "day": "Tuesday",
-    "time": "7:10-7:37 AM",
-    "sponsors": ["K. Smith"],
-    "emails": ["ksmith2@naperville203.org"],
-    "description": "Future Health Professionals club competing in health-related competitions.",
-    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
-    "requirements": "Interest in healthcare",
-    "dues": "$15 per year",
-    "social": [
-      { "label": "@hosa_nchs", "url": "https://instagram.com/hosa_nchs" },
-      { "label": "HOSA FB", "url": "https://facebook.com/hosa_nchs" },
-      { "label": "HOSA Remind", "url": "https://www.remind.com/join/hosa_nchs" }
-    ]
-  },
-  {
     "name": "Literary Magazine",
     "tags": ["Writing", "Art"],
     "room": "LC",
@@ -420,21 +401,53 @@
   {
     "name": "ESports",
     "tags": ["Games", "Competition"],
+
     "room": "TBD",
     "schedule": "Weekly",
     "day": "Friday",
     "time": "3:30-5:30 PM",
+
     "sponsors": ["Lindsey Page", "Megan Cosgrove", "Matt Leuer"],
     "emails": ["lpage@naperville203.org", "mcosgrove@naperville203.org", "mleuer@naperville203.org"],
+
     "description": "Competitive gaming club participating in school and regional eSports tournaments.",
+
     "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+
     "requirements": "Interest in competitive gaming",
     "dues": "$15 per semester",
+
     "social": [
       { "label": "@esports_nchs", "url": "https://instagram.com/esports_nchs" },
       { "label": "ESports FB", "url": "https://facebook.com/esports_nchs" },
       { "label": "ESports Remind", "url": "https://www.remind.com/join/esports_nchs" }
     ]
+  },
+  {
+    "name": "South Asian Student Association (SASA)",
+    "tags": ["Culture", "Social"],
+
+    "room": "223",
+    "schedule": "Bi-Weekly",
+    "day": "Monday",
+    "time": "3:30-4:15 PM",
+
+    "sponsors": ["Mr. Brady"],
+    "emails": ["brady@naperville203.org"],
+
+    "description": "Club celebrating South Asian culture through events, food, and discussions.",
+
+    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
+
+    "requirements": "Open to all students",
+    "dues": "$5 per semester",
+
+    "social": [
+      { "label": "@sasa_nchs", "url": "https://instagram.com/sasa_nchs" },
+      { "label": "SASA FB", "url": "https://facebook.com/sasa_nchs" },
+      { "label": "SASA Remind", "url": "https://www.remind.com/join/sasa_nchs" }
+    ]
+
   }
 
 ]

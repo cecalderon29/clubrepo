@@ -1,221 +1,177 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  const toggleBtn = document.getElementById("toggleFilters");
-  const cardGrid = document.getElementById("clubCards");
-  const searchInput = document.getElementById("searchInput");
-  const tagMenu = document.getElementById("tagMenu");
-  const overlay = document.getElementById("clubOverlay");
-  const closeOverlay = document.getElementById("closeOverlay");
-  const imgEl = document.getElementById("overlayImage");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const iconMap = {
-  instagram: "instagram",
-  twitter: "twitter",
-  facebook: "facebook",
-  website: "globe",
-  remind: "bell",
+// Clubs page script - organized and minimal
 
-  };
+// --- DOM references ---
+const refs = {
+  sidebar: document.querySelector('.sidebar'),
+  openBtn: document.getElementById('openSidebar'),
+  filterToggle: document.getElementById('toggleFilters'),
+  cardGrid: document.getElementById('clubCards'),
+  searchInput: document.getElementById('searchInput'),
+  tagMenu: document.getElementById('tagMenu'),
+  overlay: document.getElementById('clubOverlay'),
+  closeOverlayBtn: document.getElementById('closeOverlay'),
+  overlayImage: document.getElementById('overlayImage'),
+  prevBtn: document.getElementById('prevBtn'),
+  nextBtn: document.getElementById('nextBtn'),
+  themeToggle: document.getElementById('themeToggle'),
+  themeLabel: document.getElementById('themeLabel')
+};
 
-  let clubs = [];
-  let selectedTag = "all";
-  let currentImages = [];
-  let currentIndex = 0;
+// --- State ---
+let clubs = [];
+let selectedTag = 'all';
+let currentImages = [];
+let currentIndex = 0;
 
-  // Load clubs
-  await fetch("./data.json")
-    .then(response => response.json())
-    .then(data => {
-      clubs = data;
-      clubs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
-      renderCards(clubs);
-    });
-    
-  // Load tags
-  async function loadTags() {
-    const res = await fetch("tags.json");
-    const clubTags = await res.json();
-    clubTags.sort((a, b) => a.name.localeCompare(b.name));
-    renderTagMenu(clubTags);
+// --- Utilities ---
+const qs = sel => document.querySelector(sel);
+const qsa = sel => Array.from(document.querySelectorAll(sel));
+
+// --- Sidebar ---
+function toggleSidebar() {
+  refs.sidebar.classList.toggle('hide');
+}
+if (refs.openBtn) {
+  refs.openBtn.addEventListener('click', e => { e.stopPropagation(); toggleSidebar(); });
+}
+document.addEventListener('click', e => {
+  if (!refs.sidebar) return;
+  if (!refs.sidebar.classList.contains('hide') && !refs.sidebar.contains(e.target) && e.target !== refs.openBtn) {
+    refs.sidebar.classList.add('hide');
   }
+});
+if (refs.sidebar) qsa('.sidebar a').forEach(a => a.addEventListener('click', () => refs.sidebar.classList.add('hide')));
 
- 
-    toggleBtn.addEventListener("click", () => {
-    // Toggle "show" class
-    tagMenu.classList.toggle("show");
+// --- Theme toggle ---
+function setTheme(isDark) {
+  document.body.classList.toggle('dark-mode', isDark);
+  if (refs.themeToggle) refs.themeToggle.checked = isDark;
+  if (refs.themeLabel) refs.themeLabel.textContent = isDark ? '🌙 Dark' : '🌞 Light';
+  try { localStorage.setItem('darkMode', String(!!isDark)); } catch (e) {}
+}
+if (refs.themeToggle) {
+  try {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === 'true') setTheme(true);
+  } catch (e) {}
+  refs.themeToggle.addEventListener('change', () => setTheme(!!refs.themeToggle.checked));
+}
 
-    if (tagMenu.classList.contains("show")) {
-      toggleBtn.textContent = "Hide Filters ⬆";
-    } else {
-      toggleBtn.textContent = "Show Filters ⬇";
-    }
+// --- Data load ---
+async function loadClubs() {
+  const res = await fetch('./data.json');
+  const data = await res.json();
+  clubs = data.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+  renderCards(clubs);
+}
+
+// --- Render cards ---
+function renderCards(list) {
+  refs.cardGrid.innerHTML = '';
+  list.forEach(club => {
+    const card = document.createElement('div');
+    card.className = 'club-card';
+    const tagSpans = (club.tags || []).map(t => `<span class="tag ${t.toLowerCase().replace(/\s+/g, '-')}">${t}</span>`).join(' ');
+    card.innerHTML = `
+      <h2>${club.name}</h2>
+      <div class="tag-card-row">${tagSpans}</div>
+      <p class="description">${club.description || ''}</p>
+      <div class="club-footer">
+        <span class="club-time">${club.time || ''}</span>
+        <span class="club-day">${club.day || ''}</span>
+      </div>`;
+    card.addEventListener('click', () => openOverlay(club));
+    refs.cardGrid.appendChild(card);
   });
-  
-  function renderCards(clubsToRender) {
-    cardGrid.innerHTML = "";
+  updateClubCount(list.length);
+}
 
-    clubsToRender.forEach(club => {
-      const card = document.createElement("div");
-      card.classList.add("club-card");
+function updateClubCount(n) {
+  const el = document.getElementById('clubCount');
+  if (el) el.textContent = `${n} clubs found`;
+}
 
-      const tagSpans = club.tags
-        .map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`)
-        .join(" ");
+// --- Overlay / Gallery ---
+function showImage(i) {
+  if (!refs.overlayImage || !currentImages.length) return;
+  currentIndex = ((i % currentImages.length) + currentImages.length) % currentImages.length;
+  refs.overlayImage.src = currentImages[currentIndex];
+}
+function openOverlay(club) {
+  refs.overlay.classList.remove('hide');
+  document.getElementById('overlayTitle').textContent = club.name;
+  document.getElementById('tags').innerHTML = (club.tags || []).map(t => `<span class="tag ${t.toLowerCase().replace(/\s+/g,'-')}">${t}</span>`).join(' ');
+  currentImages = club.images || [];
+  currentIndex = 0;
+  if (currentImages.length) { refs.overlayImage.src = currentImages[0]; refs.overlayImage.style.display = 'block'; } else { refs.overlayImage.style.display = 'none'; }
+  document.getElementById('overlayDescription').textContent = club.description || '';
+  document.getElementById('overlayTime').textContent = club.time || 'Not specified';
+  document.getElementById('overlayDay').textContent = club.day || 'Not specified';
+  document.getElementById('overlayRoom').textContent = club.room || 'Not specified';
+  document.getElementById('overlayReq').textContent = club.requirements || 'Open to all students';
+  document.getElementById('overlayDues').textContent = club.dues || 'None';
+  document.getElementById('overlaySponsor').textContent = club.sponsors || 'Not specified';
+  document.getElementById('overlayEmail').textContent = club.emails || 'Not specified';
+  const socialEl = document.getElementById('overlaySocial');
+  socialEl.innerHTML = (club.social || []).map(link => {
+    let platform = 'website';
+    if (link.url.includes('instagram.com')) platform = 'instagram';
+    else if (link.url.includes('facebook.com')) platform = 'facebook';
+    else if (link.url.includes('twitter.com') || link.url.includes('x.com')) platform = 'twitter';
+    else if (link.url.includes('remind.com')) platform = 'remind';
+    return `<a href="${link.url}" target="_blank" class="social-pill ${platform}"><i data-lucide="${platform==='remind'?'bell':platform}"></i><span>${link.label}</span></a>`;
+  }).join('');
+  lucide.createIcons();
+}
 
-      card.innerHTML = `
-        <h2>${club.name}</h2>
-        <div class="tag-card-row">${tagSpans}</div>
-        <p class="description">${club.description}</p>
-        <div class="club-footer">
-          <span class="club-time">${club.time || ""}</span>
-          <span class="club-day">${club.day || ""}</span>
-        </div>
-      `;
-      
-      //  Overlay open on click
-      card.addEventListener("click", () => openOverlay(club));
-       
-      cardGrid.appendChild(card);
-    });
+if (refs.prevBtn) refs.prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+if (refs.nextBtn) refs.nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+if (refs.closeOverlayBtn) refs.closeOverlayBtn.addEventListener('click', () => refs.overlay.classList.add('hide'));
+if (refs.overlay) refs.overlay.addEventListener('click', e => { if (e.target === refs.overlay) refs.overlay.classList.add('hide'); });
 
-      updateClubCount(clubsToRender.length);
-  }
-    function showImage(index) {
-    console.log("showImage called with index:", index);
-    if (currentImages.length > 0) {
-      currentIndex = (index + currentImages.length) % currentImages.length;
-      imgEl.src = currentImages[currentIndex];
-    }
-  }
-
-  // Overlay functionality
-  function openOverlay(club) {
-    overlay.classList.remove("hide");
-
-    console.log("openOverlay called with club:", club);
-    document.getElementById("overlayTitle").textContent = club.name;
-    document.getElementById("tags").innerHTML = club.tags.map(tag =>
-      `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`
-    ).join(" ");
-    
-    // Handle gallery images
-    currentImages = club.images || [];
-    currentIndex = 0;
-
-    if (currentImages.length > 0) {
-      imgEl.src = currentImages[currentIndex];
-      imgEl.style.display = "block";
-    } else {
-      imgEl.style.display = "none";
-    }
-
-    document.getElementById("overlayDescription").textContent = club.description;
-    document.getElementById("overlayTime").textContent = club.time || "Not specified";
-    document.getElementById("overlayDay").textContent = club.day || "Not specified";
-    document.getElementById("overlayRoom").textContent = club.room || "Not specified";
-
-    // Membership
-    document.getElementById("overlayReq").textContent = club.requirements || "Open to all students";
-    document.getElementById("overlayDues").textContent = club.dues || "None";
-    // Contact
-    document.getElementById("overlaySponsor").textContent = club.sponsors || "Not specified";
-    document.getElementById("overlayEmail").textContent = club.emails || "Not specified";
-
-    // Social Media
-    const socialEl = document.getElementById("overlaySocial");
-    socialEl.innerHTML = (club.social || []).map(link => {
-      let platform = "";
-
-      if (link.url.includes("instagram.com")) platform = "instagram";
-      else if (link.url.includes("facebook.com")) platform = "facebook";
-      else if (link.url.includes("twitter.com") || link.url.includes("x.com")) platform = "twitter";
-      else if (link.url.includes("remind.com")) platform = "remind";
-      else if (link.url.includes("http")) platform = "website";
-      else platform = "website"; // default icon
-
-      return `
-        <a href="${link.url}" target="_blank" class="social-pill ${platform}">
-          <i data-lucide="${platform === "remind" ? "bell" : platform}"></i>
-          <span>${link.label}</span>
-        </a>
-      `;
-    }).join("");
-
-    // re-render lucide icons
-    lucide.createIcons();
-
-    
-  }
-
-  // ✅ attach listeners only once
-  prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
-  nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
-
-
-  //Close overlay
-  document.getElementById("closeOverlay").addEventListener("click", () => {
-    overlay.classList.add("hide");
+// --- Filters / Tags ---
+function renderTagMenu(tags) {
+  refs.tagMenu.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className = 'tag-filter active'; allBtn.dataset.tag = 'all'; allBtn.textContent = 'All';
+  refs.tagMenu.appendChild(allBtn);
+  tags.sort((a,b) => a.name.localeCompare(b.name)).forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className = 'tag-filter'; btn.dataset.tag = tag.name.toLowerCase().replace(/\s+/g,'-'); btn.textContent = tag.name;
+    refs.tagMenu.appendChild(btn);
   });
-  //also close overlay on clicking outside
-  document.getElementById("clubOverlay").addEventListener("click", (e) => {
-    if (e.target === overlay) {
-      overlay.classList.add("hide");
-    }
+  qsa('.tag-filter').forEach(btn => btn.addEventListener('click', () => {
+    qsa('.tag-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedTag = btn.dataset.tag;
+    const filtered = selectedTag === 'all' ? clubs : clubs.filter(c => (c.tags||[]).some(t => t.toLowerCase().replace(/\s+/g,'-') === selectedTag));
+    renderCards(filtered);
+  }));
+}
+
+if (refs.filterToggle) {
+  refs.filterToggle.addEventListener('click', () => {
+    refs.tagMenu.classList.toggle('show');
+    refs.filterToggle.textContent = refs.tagMenu.classList.contains('show') ? 'Hide Filters ⬆' : 'Show Filters ⬇';
   });
-  function updateClubCount(count) {
-    const clubCountElement = document.getElementById("clubCount");
-    clubCountElement.textContent = `${count} clubs found`;
-  }
-  function renderTagMenu(tags) {
-    tagMenu.innerHTML = "";
+}
 
-    // "All" button
-    const allBtn = document.createElement("button");
-    allBtn.classList.add("tag-filter", "active");
-    allBtn.dataset.tag = "all";
-    allBtn.textContent = "All";
-    tagMenu.appendChild(allBtn);
-
-    // Tag buttons
-    tags.forEach(tag => {
-        
-      const btn = document.createElement("button");
-      btn.classList.add("tag-filter");
-      btn.dataset.tag = tag.name.toLowerCase().replace(/\s+/g, '-');
-      btn.textContent = tag.name;
-      tagMenu.appendChild(btn);
-    });
-
-    // Add event listeners for tag filters
-    document.querySelectorAll(".tag-filter").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".tag-filter").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        selectedTag = btn.dataset.tag;
-
-        const filtered = selectedTag === "all"
-          ? clubs
-          : clubs.filter(club => club.tags.some(t => t.toLowerCase().replace(/\s+/g, '-') === selectedTag));
-
-        renderCards(filtered);
-      });
-    });
-  }
-
-  // Search logic
-  searchInput.addEventListener("input", function () {
-    const query = searchInput.value.toLowerCase();
-    const filtered = clubs.filter(club =>
-      club.name.toLowerCase().split(" ").some(word => word.startsWith(query))
-    );
-
-    // Apply tag filter *on top of search*
-    const finalFiltered = selectedTag === "all"
-      ? filtered
-      : filtered.filter(club => club.tags.some(t => t.toLowerCase().replace(/\s+/g, '-') === selectedTag));
-
+// --- Search ---
+if (refs.searchInput) {
+  refs.searchInput.addEventListener('input', () => {
+    const q = refs.searchInput.value.trim().toLowerCase();
+    const filtered = clubs.filter(c => c.name.toLowerCase().split(' ').some(w => w.startsWith(q)));
+    const finalFiltered = selectedTag === 'all' ? filtered : filtered.filter(c => (c.tags||[]).some(t => t.toLowerCase().replace(/\s+/g,'-') === selectedTag));
     renderCards(finalFiltered);
   });
+}
 
-  loadTags();
-});
+// --- Init ---
+(async function init(){
+  await loadClubs();
+  try {
+    const res = await fetch('tags.json');
+    const tags = await res.json();
+    renderTagMenu(tags);
+  } catch (e) {}
+})();

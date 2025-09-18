@@ -10,6 +10,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <span id="openSidebar" class="open-btn">&#8801;</span>
+    <aside class="sidebar hide">
+      <nav class="menu">
+        <a href="../index.html"> Home</a>
+        <a href="../clubs/"> Clubs</a>
+        <a href="../calendar/"> Calendar</a>
+
+        <!-- Favorited Clubs Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-btn"> Favorited Clubs ▾</button>
+          <div class="dropdown-content">
+              <div id="favoritedClubsList">No favorited clubs yet.</div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+      <!-- Dark/Light Mode Toggle -->
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+        <span id="themeLabel">🌞 Light</span>
+      </div>
+
+      <!-- Sign Out Button -->
+      <button class="signout-btn">🚪 Sign Out</button>
+    </div>
+    </aside>
+
     <div class = "container">
         <div class = "search-bar-container">
             <h1 class = "search-bar-title">Explore Clubs</h1>
