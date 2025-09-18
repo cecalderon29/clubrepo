@@ -73,19 +73,59 @@ function renderCards(list) {
     card.className = 'club-card';
     const tagSpans = (club.tags || []).map(t => `<span class="tag ${t.toLowerCase().replace(/\s+/g, '-')}">${t}</span>`).join(' ');
     card.innerHTML = `
-      <h2>${club.name}</h2>
+      <div class="card-header">
+        <h2>${club.name}</h2>
+        <button class="heart-btn" aria-label="Favorite" aria-pressed="false">
+          <i data-lucide="heart" class="heart-icon"></i>
+        </button>
+      </div>
       <div class="tag-card-row">${tagSpans}</div>
       <p class="description">${club.description || ''}</p>
       <div class="club-footer">
         <span class="club-time">${club.time || ''}</span>
         <span class="club-day">${club.day || ''}</span>
       </div>`;
+
+    // Clicking the card opens the overlay; ensure heart clicks don't bubble up
     card.addEventListener('click', () => openOverlay(club));
+
     refs.cardGrid.appendChild(card);
+
+    // Render lucide icons for the new DOM nodes and attach heart listener
+    try { lucide.createIcons(); } catch (e) {}
+    const heartBtn = card.querySelector('.heart-btn');
+    if (heartBtn) attachHeartListener(heartBtn);
   });
   updateClubCount(list.length);
 }
 
+// Heart button helper: attach to a button element and stop event propagation so card clicks won't fire
+function attachHeartListener(button) {
+  if (!button) return;
+  button.addEventListener('click', function (e) {
+    e.stopPropagation(); // prevent the card click handler from opening the overlay
+    // toggle visual state
+    const isFav = button.classList.toggle('favorited');
+    button.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+    // find first svg (lucide) inside and set fill/stroke for immediate visual change
+    const svg = button.querySelector('svg');
+    if (svg) {
+      if (isFav) {
+        svg.style.fill = 'currentColor';
+        svg.style.stroke = 'none';
+      } else {
+        svg.style.fill = 'none';
+        svg.style.stroke = '';
+      }
+    }
+  });
+}
+
+// Attach listener to overlay heart button (exists in DOM)
+if (refs.overlay) {
+  const overlayHeart = refs.overlay.querySelector('.heart-btn');
+  if (overlayHeart) attachHeartListener(overlayHeart);
+}
 function updateClubCount(n) {
   const el = document.getElementById('clubCount');
   if (el) el.textContent = `${n} clubs found`;

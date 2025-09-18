@@ -304,9 +304,7 @@ body.dark-mode .hero h1,
 body.dark-mode .hero h2,
 body.dark-mode .hero p {
   color: #fff5f5;
-  text-shadow: 
-    3px 3px 0 rgba(0,0,0,0.25),
-    6px 6px 0 rgba(0,0,0,0.18);
+
 }
 
 body.dark-mode .buttons a:first-child {
