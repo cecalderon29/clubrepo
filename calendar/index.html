@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCHS Club Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="clubs/image/png" href="Redhawk.png">
+</head>
+<body>
+  <span id="openSidebar" class="open-btn">&#8801;</span>
+    <aside class="sidebar hide">
+      <nav class="menu">
+        <a href="../index.html"> Home</a>
+        <a href="../clubs/"> Clubs</a>
+        <a href="../calendar/"> Calendar</a>
+
+        <!-- Favorited Clubs Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-btn"> Favorited Clubs ▾</button>
+          <div class="dropdown-content">
+              <div id="favoritedClubsList">No favorited clubs yet.</div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+      <!-- Dark/Light Mode Toggle -->
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+        <span id="themeLabel">🌞 Light</span>
+      </div>
+
+      <!-- Sign Out Button -->
+      <button class="signout-btn">🚪 Sign Out</button>
+      </aside>
+
+      <h1>Calendar Page Coming Soon!</h1>
+      
+  <script src="script.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</body>
+</html>
