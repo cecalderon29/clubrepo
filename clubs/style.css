@@ -302,6 +302,31 @@ input:checked + .slider:before {
 }
   
 }
+
+/* Mobile-specific heart/tap-target improvements */
+@media (max-width: 768px) {
+  .card-header { gap: 0.5rem; }
+  .card-header h2 { font-size: 1.1rem; }
+  .heart-btn {
+    padding: 10px; /* bigger hit area */
+    border-radius: 10px;
+    background: rgba(0,0,0,0.03);
+    margin-left: 8px;
+  }
+  .heart-btn svg { width: 26px; height: 26px; }
+  .heart-btn.favorited svg { transform: scale(1.15); }
+  .heart-btn:active { transform: translateY(1px) scale(0.99); }
+  .heart-btn { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  /* overlay heart slightly larger on mobile */
+  .overlay-content .heart-btn svg { width: 28px; height: 28px; }
+}
+
+@media (max-width: 480px) {
+  /* Extra comfortable touch targets on small phones */
+  .heart-btn { padding: 12px; }
+  .heart-btn svg { width: 28px; height: 28px; }
+  .card-header h2 { font-size: 1rem; }
+}
 /* Search Filter Styles
  */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
@@ -329,7 +354,7 @@ input:checked + .slider:before {
   width: 100%;
   max-width: 600px;
   height: 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
 }
 
 .search-bar input {
@@ -355,9 +380,7 @@ body.dark-mode .search-bar-title {
 
 
 
-body.dark-mode .search-bar input::placeholder {
-  color: rgba(245,245,245,0.6);
-}
+
 
 /* Dark-mode: Sidebar styling (aligned with top-level landing page) */
 /* exact landing page dark-mode sidebar rules */

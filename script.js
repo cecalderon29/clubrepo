@@ -6,7 +6,7 @@ function toggleSidebar() {
   sidebar.classList.toggle('hide');
 }
 
-// Close sidebar when clicking a link inside it (mobile-friendly)
+// Close sidebar when clicking a link inside it 
 sidebar.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => sidebar.classList.add('hide'));
 });

@@ -48,6 +48,8 @@ function setTheme(isDark) {
   if (refs.themeToggle) refs.themeToggle.checked = isDark;
   if (refs.themeLabel) refs.themeLabel.textContent = isDark ? '🌙 Dark' : '🌞 Light';
   try { localStorage.setItem('darkMode', String(!!isDark)); } catch (e) {}
+  // Keep sidebar closed when switching themes (prevents accidental auto-open when restoring dark mode)
+  if (refs.sidebar) refs.sidebar.classList.add('hide');
 }
 if (refs.themeToggle) {
   try {
@@ -56,6 +58,12 @@ if (refs.themeToggle) {
   } catch (e) {}
   refs.themeToggle.addEventListener('change', () => setTheme(!!refs.themeToggle.checked));
 }
+// Dropdown toggle
+document.querySelectorAll(".dropdown-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.classList.toggle("open");
+  });
+});
 
 // --- Data load ---
 async function loadClubs() {
@@ -99,7 +107,7 @@ function renderCards(list) {
   updateClubCount(list.length);
 }
 
-// Heart button helper: attach to a button element and stop event propagation so card clicks won't fire
+
 function attachHeartListener(button) {
   if (!button) return;
   button.addEventListener('click', function (e) {
@@ -125,6 +133,39 @@ function attachHeartListener(button) {
 if (refs.overlay) {
   const overlayHeart = refs.overlay.querySelector('.heart-btn');
   if (overlayHeart) attachHeartListener(overlayHeart);
+}
+
+// Robust delegation: catch heart clicks at container level (handles dynamic content and ensures clicks always work)
+if (refs.cardGrid) {
+  refs.cardGrid.addEventListener('click', (e) => {
+    const heart = e.target.closest('.heart-btn');
+    if (!heart) return;
+    e.stopPropagation();
+    // reuse attach logic by calling attach-style handler once
+    // toggle visual state
+    const isFav = heart.classList.toggle('favorited');
+    heart.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+    const svg = heart.querySelector('svg');
+    if (svg) {
+      if (isFav) { svg.style.fill = 'currentColor'; svg.style.stroke = 'none'; }
+      else { svg.style.fill = 'none'; svg.style.stroke = ''; }
+    }
+  });
+}
+
+if (refs.overlay) {
+  refs.overlay.addEventListener('click', (e) => {
+    const heart = e.target.closest('.heart-btn');
+    if (!heart) return;
+    e.stopPropagation();
+    const isFav = heart.classList.toggle('favorited');
+    heart.setAttribute('aria-pressed', isFav ? 'true' : 'false');
+    const svg = heart.querySelector('svg');
+    if (svg) {
+      if (isFav) { svg.style.fill = 'currentColor'; svg.style.stroke = 'none'; }
+      else { svg.style.fill = 'none'; svg.style.stroke = ''; }
+    }
+  });
 }
 function updateClubCount(n) {
   const el = document.getElementById('clubCount');
@@ -214,4 +255,6 @@ if (refs.searchInput) {
     const tags = await res.json();
     renderTagMenu(tags);
   } catch (e) {}
+  // Defensive: ensure sidebar starts hidden on page load (avoids auto-open tied to other scripts or theme restore)
+  if (refs.sidebar) refs.sidebar.classList.add('hide');
 })();
