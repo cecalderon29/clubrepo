@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCHS Club Directory | Admin Login </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="clubs/image/png" href="Redhawk.png">
+    
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="company-logo">
+                    <div class="logo-icon"><img src="Redhawk.png"width="100" height="100"></div>
+                </div>
+                <h2>Welcome Back</h2>
+            </div>
+            
+            <form class="login-form" id="loginForm" novalidate>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                        <label for="email">Email</label>
+                        <span class="input-border"></span>
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                        <label for="password">Password</label>
+                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Toggle password visibility">
+                            <span class="toggle-icon"></span>
+                        </button>
+                        <span class="input-border"></span>
+                    </div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-wrapper">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="checkbox-label">
+                            <span class="checkbox-custom"></span>
+                            Keep me signed in
+                        </label>
+                    </div>
+                    <a href="#" class="forgot-password">Reset password</a>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">Sign In</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>or sign in with</span>
+            </div>
+
+            <div class="sso-options">
+                <button type="button" class="sso-btn google-btn">
+                    <span class="sso-icon google-icon"></span>
+                    <span>Google</span>
+                </button>
+            </div>
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">✓</div>
+                <h3>Login Successful!</h3>
+                <p>Redirecting to dashboard...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
