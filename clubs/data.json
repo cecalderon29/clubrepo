@@ -57,25 +57,6 @@
     ]
   },
   {
-    "name": "Jazz Studio Orchestra",
-    "tags": ["Music", "Performance"],
-    "room": "Band Room",
-    "schedule": "Weekly",
-    "day": "Monday",
-    "time": "3:30-4:30 PM",
-    "sponsors": ["D. Alstadt"],
-    "emails": ["dalstadt@naperville203.org"],
-    "description": "Orchestra for jazz-focused instrumental students performing weekly.",
-    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
-    "requirements": "Audition required",
-    "dues": "$20 per semester",
-    "social": [
-      { "label": "@jazzstudio_nchs", "url": "https://instagram.com/jazzstudio_nchs" },
-      { "label": "Jazz Studio FB", "url": "https://facebook.com/jazzstudio_nchs" },
-      { "label": "Jazz Studio Remind", "url": "https://www.remind.com/join/jazzstudio_nchs" }
-    ]
-  },
-  {
     "name": "National Honor Society",
     "tags": ["Leadership", "Academic"],
     "room": "Auditorium",
@@ -92,25 +73,6 @@
       { "label": "@nhs_nchs", "url": "https://instagram.com/nhs_nchs" },
       { "label": "NHS FB", "url": "https://facebook.com/nhs_nchs" },
       { "label": "NHS Remind", "url": "https://www.remind.com/join/nhs_nchs" }
-    ]
-  },
-  {
-    "name": "Neuroscience Club",
-    "tags": ["STEM", "Science"],
-    "room": "220",
-    "schedule": "Weekly",
-    "day": "Monday",
-    "time": "3:15-4:15 PM",
-    "sponsors": ["L. Zwickert"],
-    "emails": ["lzwickert@naperville203.org"],
-    "description": "Students explore neuroscience topics through experiments and discussion.",
-    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
-    "requirements": "Interest in neuroscience",
-    "dues": "$5 per semester",
-    "social": [
-      { "label": "@neuroclub_nchs", "url": "https://instagram.com/neuroclub_nchs" },
-      { "label": "Neuroscience FB", "url": "https://facebook.com/neuroclub_nchs" },
-      { "label": "Neuroscience Remind", "url": "https://www.remind.com/join/neuroclub_nchs" }
     ]
   },
   {
@@ -187,25 +149,6 @@
       { "label": "@germanclub", "url": "https://instagram.com/germanclub" },
       { "label": "German Club FB", "url": "https://facebook.com/germanclub" },
       { "label": "German Club Remind", "url": "https://www.remind.com/join/germanclub" }
-    ]
-  },
-  {
-    "name": "Literary Magazine",
-    "tags": ["Writing", "Art"],
-    "room": "LC",
-    "schedule": "Every Other Week",
-    "day": "Tuesday",
-    "time": "3:15-4:15 PM",
-    "sponsors": ["J. Hayward"],
-    "emails": ["jhayward@naperville203.org"],
-    "description": "Magazine showcasing student writing, poetry, and artwork.",
-    "images": ["images/image1.jpg", "images/image2.jpg", "images/image3.jpg"],
-    "requirements": "Submission of work",
-    "dues": "$10 per year",
-    "social": [
-      { "label": "@litmag_nchs", "url": "https://instagram.com/litmag_nchs" },
-      { "label": "Lit Mag FB", "url": "https://facebook.com/litmag_nchs" },
-      { "label": "Lit Mag Remind", "url": "https://www.remind.com/join/litmag_nchs" }
     ]
   },
   {

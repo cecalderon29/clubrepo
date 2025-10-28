@@ -8,42 +8,60 @@
   <link rel="stylesheet" href="../sidebar.css">
   <link rel="icon" type="clubs/image/png" href="Redhawk.png">
 </head>
-<body>
-  <span id="openSidebar" class="open-btn">&#8801;</span>
-    <aside class="sidebar hide">
-      <nav class="menu">
-        <a href="../index.html"> Home</a>
-        <a href="../clubs/"> Clubs</a>
-        <a href="../calendar/"> Calendar</a>
-        <a href="../about/">About</a>
+  <body>
+    <span id="openSidebar" class="open-btn">&#8801;</span>
+      <aside class="sidebar hide">
+        <nav class="menu">
+          <a href="../index.html"> Home</a>
+          <a href="../clubs/"> Clubs</a>
+          <a href="../calendar/"> Calendar</a>
+          <a href="../about/">About</a>
 
-        <!-- Favorited Clubs Dropdown -->
-        <div class="dropdown">
-          <button class="dropdown-btn"> Favorited Clubs ▾</button>
-          <div class="dropdown-content">
-              <div id="favoritedClubsList">No favorited clubs yet.</div>
+          <!-- Favorited Clubs Dropdown -->
+          <div class="dropdown">
+            <button class="dropdown-btn"> Favorited Clubs ▾</button>
+            <div class="dropdown-content">
+                <div id="favoritedClubsList">No favorited clubs yet.</div>
+            </div>
           </div>
+        </nav>
+
+        <div class="sidebar-footer">
+        <!-- Dark/Light Mode Toggle -->
+        <div class="toggle-container">
+          <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+          </label>
+          <span id="themeLabel">🌞 Light</span>
         </div>
-      </nav>
 
-      <div class="sidebar-footer">
-      <!-- Dark/Light Mode Toggle -->
-      <div class="toggle-container">
-        <label class="switch">
-          <input type="checkbox" id="themeToggle">
-          <span class="slider"></span>
-        </label>
-        <span id="themeLabel">🌞 Light</span>
-      </div>
-
-      <!-- Sign Out Button -->
-      <button class="signout-btn">🚪 Sign Out</button>
+        <!-- Sign Out Button -->
+        <button class="signout-btn">🚪 Sign Out</button>
       </aside>
+    </span>
+    <div class="calendar-container">
+      <header class="calendar-header">
+        <button id="prev-month">&#8249;</button>
+        <h2 id="month-year"></h2>
+        <button id="next-month">&#8250;</button>
+      </header>
 
-      <h1>Calendar Page Coming Soon!</h1>
-      
-  <script src="script.js"></script>
-  <script src="../sidebar.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-</body>
+      <div class="calendar-grid">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+      </div>
+      <div id="days" class="calendar-grid"></div>
+
+    </div>
+        
+    <script src="script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
 </html>
