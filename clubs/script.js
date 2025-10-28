@@ -2,8 +2,7 @@
 
 // --- DOM references ---
 const refs = {
-  sidebar: document.querySelector('.sidebar'),
-  openBtn: document.getElementById('openSidebar'),
+
   filterToggle: document.getElementById('toggleFilters'),
   cardGrid: document.getElementById('clubCards'),
   searchInput: document.getElementById('searchInput'),
@@ -13,8 +12,7 @@ const refs = {
   overlayImage: document.getElementById('overlayImage'),
   prevBtn: document.getElementById('prevBtn'),
   nextBtn: document.getElementById('nextBtn'),
-  themeToggle: document.getElementById('themeToggle'),
-  themeLabel: document.getElementById('themeLabel')
+  
 };
 
 // --- State ---
@@ -27,43 +25,7 @@ let currentIndex = 0;
 const qs = sel => document.querySelector(sel);
 const qsa = sel => Array.from(document.querySelectorAll(sel));
 
-// --- Sidebar ---
-function toggleSidebar() {
-  refs.sidebar.classList.toggle('hide');
-}
-if (refs.openBtn) {
-  refs.openBtn.addEventListener('click', e => { e.stopPropagation(); toggleSidebar(); });
-}
-document.addEventListener('click', e => {
-  if (!refs.sidebar) return;
-  if (!refs.sidebar.classList.contains('hide') && !refs.sidebar.contains(e.target) && e.target !== refs.openBtn) {
-    refs.sidebar.classList.add('hide');
-  }
-});
-if (refs.sidebar) qsa('.sidebar a').forEach(a => a.addEventListener('click', () => refs.sidebar.classList.add('hide')));
 
-// --- Theme toggle ---
-function setTheme(isDark) {
-  document.body.classList.toggle('dark-mode', isDark);
-  if (refs.themeToggle) refs.themeToggle.checked = isDark;
-  if (refs.themeLabel) refs.themeLabel.textContent = isDark ? '🌙 Dark' : '🌞 Light';
-  try { localStorage.setItem('darkMode', String(!!isDark)); } catch (e) {}
-  // Keep sidebar closed when switching themes (prevents accidental auto-open when restoring dark mode)
-  if (refs.sidebar) refs.sidebar.classList.add('hide');
-}
-if (refs.themeToggle) {
-  try {
-    const saved = localStorage.getItem('darkMode');
-    if (saved === 'true') setTheme(true);
-  } catch (e) {}
-  refs.themeToggle.addEventListener('change', () => setTheme(!!refs.themeToggle.checked));
-}
-// Dropdown toggle
-document.querySelectorAll(".dropdown-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.parentElement.classList.toggle("open");
-  });
-});
 
 // --- Data load ---
 async function loadClubs() {
